@@ -1,0 +1,113 @@
+<template name="Privado">
+
+  <br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<div class="row">
+		{{>listaDeUsuariosConectadosPrivados}}
+		{{>mensajesPrivados}}
+	</div>
+  <br><br>
+</template>
+
+<template name="Privado1">
+  <br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<div class="row">
+		{{>listaDeUsuariosConectadosPrivados}}
+		{{>mensajesPrivados1}}
+	</div>
+</template>
+
+<template name="mensajesPrivados1">
+  <div class="col-md-8">
+    <div class="box-white">
+     <div class="conversaciones">
+        {{#each conversaciones}}
+        <a href="/chatp/{{this.usuarioId}}" class="conversa">@{{username this.usuarioId}}</a>
+        {{/each}}
+      </div>
+      <div class="lista">
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="listaDeUsuariosConectadosPrivados">
+  <div class="col-md-4">
+		<div class="box-white">
+			<div class="lista" style="padding-top: 10px;">
+				{{#each usuarios}}
+					<div class="user-card">
+						<span class="avatar"></span>
+						<p>
+
+							<a href="/chat/{{this._id}}">{{this.username}}</a>
+              {{#if this.profile.pais}}
+              <span>{{this.profile.pais}}</span>
+              {{else}}
+              <span>-</span>
+              {{/if}}
+						</p>
+					</div>
+				{{/each}}
+			</div>
+
+		</div>
+	</div>
+</template>
+
+<template name="mensajesPrivados">
+  <div class="col-md-8">
+    <div class="box-white">
+      <div class="conversaciones">
+
+        <a href="/chatp/{{this.usuarioId}}" style="border-right: none" class="conversa">@{{username}}</a>
+
+      </div>
+      <div class="lista" id="mensajes4">
+        {{#each mensajes}}
+          <div class="mensaje" id="mensajes">
+            <span class="avatar-mensaje">
+
+            </span>
+            <p>
+
+              <a href="#">{{quien}}</a>
+              <br>
+            <!--  {{#emoji}}  -->
+                <a style="color: {{color}}; display: inline-block;">{{this.mensaje}}</a>
+            <!-- {{/emoji}} -->
+
+              {{#each fotos}}
+
+    					{{#if isImage}}
+    					<div class="col-md-12" style="padding: 0;">
+    						<div class="publicacion">
+    							<img src="{{this.url}}" alt="{{this.metadata.creadorId}}" style="min-width: 200px; min-height: 200px; max-width: 400px; max-height: 350px; box-shadow: inset 0px -1px 11px -2px rgba(0,0,0,0.75); border-radius: 4.5px; border: 1px solid #f1f1f1; display: block; ">
+    						</div>
+    					</div>
+    					{{/if}}
+
+    					{{/each}}
+
+            </p>
+          </div>
+        {{/each}}
+      </div>
+      <div class="mensaje-box">
+        <input type="text"  style="width: 63%; float: left; padding-top: 13px; margin-left: 48px;" placeholder="Envía un mensaje..." name="mensaje">
+        <label class="btn btn-default btn-file" style="margin-top: 0; padding-top: 14px; background-color: #b10c2a; border-color: #b10c2a; height: 100%; width: 82px; color: white; margin-right: -308px;">
+          <span style="font-size: 16px; display: inline-block; margin-right: 3px;" class="glyphicon glyphicon-picture" aria-hidden="true"></span> <!--Enviar foto -->  <input type="file" id="myArchivo" style="display: none;">
+        </label>
+        <input type="submit" class="enviar" style="margin-right: 65px;">
+      </div>
+    </div>
+  </div>
+
+</template>

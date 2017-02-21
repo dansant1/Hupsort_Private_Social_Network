@@ -1,0 +1,156 @@
+<template name="chat">
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<div class="row">
+		{{>listaDeUsuariosConectados}}
+		{{>mensajes}}
+	</div>
+	<br><br>
+</template>
+
+<template name="listaDeUsuariosConectados">
+	<div class="col-md-4">
+		<div class="box-white">
+			<div class="lista" style="padding-top: 10px;">
+				{{#each usuarios}}
+					<div class="user-card">
+						<span class="avatar"></span>
+						<p>
+
+							<a href="/m/{{this._id}}">{{this.username}}</a>
+							{{#if this.profile.pais}}
+							<span>{{this.profile.pais}}</span>
+							{{else}}
+							<span>-</span>
+							{{/if}}
+						</p>
+					</div>
+				{{/each}}
+			</div>
+
+		</div>
+	</div>
+</template>
+
+<template name="mensajes">
+	<div class="col-md-8">
+		<div class="box-white">
+			<div class="conversaciones">
+				<a href="#">CHATROOM</a>
+				{{#each conversaciones}}
+				<a href="/chatp/{{this.usuarioId}}" class="conversa">@{{username this.usuarioId}}</a>
+				{{/each}}
+			</div>
+			<div class="lista" id="mensajes3">
+
+				{{#each mensajes}}
+					<div class="mensaje">
+						<span class="avatar-mensaje">
+
+						</span>
+						<p>
+
+							<a href="#">{{this.de.nombre}}</a>
+							<!--{{#emoji}} -->
+							  <span style="color: {{this.color}}">{{this.mensaje}}</span>
+							<!--{{/emoji}}-->
+
+						</p>
+					</div>
+				{{/each}}
+			</div>
+			<div class="mensaje-box">
+				<input class="message" type="text" placeholder="Envía un mensaje. Para mencionar a un usuario utiliza el @." name="mensaje" id="input-default">
+
+				<div id="cp2" class="input-group colorpicker-component">
+    				<input type="hidden" id="color" value="{{colores}}" class="form-control" />
+    				<span class="input-group-addon"><i></i></span>
+				</div>
+
+				<!--<div class="field">
+      				<input type="text" id="input-default" class="emojiable-option" placeholder="Default">
+    			</div>-->
+
+				<input type="submit" class="enviar">
+			</div>
+		</div>
+	</div>
+</template>
+
+<template name="Privados">
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<div class="row">
+		{{>listaDeUsuariosConectados}}
+		{{>mensajesPrivados}}
+	</div>
+	<br><br>
+</template>
+
+<template name="mensajesUnicos">
+	<div class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h4 class="modal-title">Mensajes</h4>
+                </div>
+
+                <div class="modal-body">
+									<div class="col-md-8">
+										<div class="box-white">
+											<div class="lista" id="mensajes4">
+												{{#each mensajes}}
+													<div class="mensaje" id="mensajes">
+														<span class="avatar-mensaje">
+
+														</span>
+														<p>
+
+															<a href="#">{{quien}}</a>
+															<br>
+															<!--{{#emoji}} -->
+																<a style="color: {{color}}; display: inline-block;">{{this.mensaje}}</a>
+															<!-- {{/emoji}} -->
+
+															{{#each fotos}}
+
+															{{#if isImage}}
+															<div class="col-md-12" style="padding: 0;">
+																<div class="publicacion">
+																	<img src="{{this.url}}" alt="{{this.metadata.creadorId}}" style="min-width: 200px; min-height: 200px; max-width: 400px; max-height: 350px; box-shadow: inset 0px -1px 11px -2px rgba(0,0,0,0.75); border-radius: 4.5px; border: 1px solid #f1f1f1; display: block; ">
+																</div>
+															</div>
+															{{/if}}
+
+															{{/each}}
+
+														</p>
+													</div>
+												{{/each}}
+											</div>
+											<div class="mensaje-box">
+												<input type="text"  style="width: 63%; float: left; padding-top: 13px; margin-left: 48px;" placeholder="Envía un mensaje..." name="mensaje">
+												<label class="btn btn-default btn-file" style="margin-top: 0; padding-top: 14px; background-color: #b10c2a; border-color: #b10c2a; height: 100%; width: 82px; color: white; margin-right: -308px;">
+													<span style="font-size: 16px; display: inline-block; margin-right: 3px;" class="glyphicon glyphicon-picture" aria-hidden="true"></span> <!--Enviar foto -->  <input type="file" id="myArchivo" style="display: none;">
+												</label>
+												<input type="submit" class="enviar" style="margin-right: 65px;">
+											</div>
+										</div>
+									</div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</template>

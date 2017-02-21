@@ -1,0 +1,81 @@
+<template name="cuenta">
+    {{#if currentUser}}
+    <nav class="navbar navbar-default navbar-fixed-top">
+      	<div class="container">
+        	<div class="navbar-header">
+          		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            	<span class="sr-only">Toggle navigation</span>
+            	<span class="icon-bar"></span>
+            	<span class="icon-bar"></span>
+            	<span class="icon-bar"></span>
+          		</button>
+          		<a class="navbar-brand" style="padding-top: 5px;" href="/chat"><img src="/hupsort5.png" style="width: 100px; height: 40px;" alt="" /></a>
+              <div class="search ">
+                <span class="fa fa-search"></span>
+                <input placeholder="Buscar por nombre de usuario">
+              </div>
+
+        	</div>
+        	<div id="navbar" class="navbar-collapse collapse">
+
+          		<ul class="nav navbar-nav navbar-right" style="font-family: 'Imprima', sans-serif; font-size: 13px;">
+
+                <li>
+                  <div class="dropdown">
+                    <a style="color: white;
+  font-size: 15px;
+  text-transform: uppercase; margin-top: 15px; display: inline-block;" class=" dropdown-toggle" id="menu1" data-toggle="dropdown">
+                      <span>
+                        <img style="position: relative; top: -3px; display: inline-block; margin-right: 4px;" src="/speech-bubble.png" alt="">
+                        {{#if HaySolicitudes}}
+                          <span style="background-color: white; color: #B24357; width: 20px; height: 20px; text-align: center; display: inline-block; border-radius: 70%;">{{cantidadSolicitudes}}</span>
+                        {{/if}}
+
+                      </span>
+                      Mi perfil
+                      <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                      {{#each solicitudes}}
+                        <li role="presentation">
+                          <a  style="display: block; padding: 3px; margin-bottom: 10px" role="menuitem" tabindex="-1" href="/m/{{this.de}}">{{this.quien}}</a>
+                          <button type="button" class="btn btn-danger aceptar">Aceptar</button>
+                          <button type="button" class="btn btn-default denegar">Eliminar</button>
+                          <hr>
+                        </li>
+
+                      {{/each}}
+
+                    </ul>
+                  </div>
+                </li>
+            		<li>
+            			<a href="/privado">
+							<span>
+                <img style="position: relative; top: -3px; display: inline-block; margin-right: 4px;" src="/speech-bubble.png" alt="">
+							</span>
+              Mensajes
+            			</a>
+            		</li>
+
+            		<li>
+            			<a class="logout">
+            				<span>
+                      <img style="position: relative; top: -3px; display: inline-block; margin-right: 4px;" src="/power.png" alt="">
+            				</span>
+                    Cerrar sesión
+            			</a>
+            		</li>
+          		</ul>
+        	</div>
+      	</div>
+    </nav>
+
+	<div class="container">
+		{{>Template.dynamic template=content}}
+	</div>
+  {{else}}
+    {{>home}}
+  {{/if}}
+
+</template>

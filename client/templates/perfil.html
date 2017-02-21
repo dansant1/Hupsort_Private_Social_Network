@@ -1,0 +1,274 @@
+<template name="perfil">
+<br>
+<br>
+<br>
+<br>
+<br>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3">
+				<div class="box-white" style="padding-top: 15px; color: #777">
+					{{#with usuario}}
+
+					<h4 style="width: 80%; margin: 10px auto; text-align: center;">{{this.username}}
+					</h4>
+					<span style="display: inline-block;" class="avatar-perfil"></span>
+					<span class="amigos">
+					<a href="/m/{{this._id}}">
+						<img src="/icon.png" class="amigo">
+					</a>
+					{{#if esMiMuro}}
+					
+					{{else}}
+						<a href="#" class="agregar-amigo">
+						<img src="/add.png" class="amigo">
+					</a>
+					{{/if}}
+					</span>
+					{{#if esMiMuro}}
+					<div class="estate estado">
+    				<span contenteditable="true" class="e">{{this.profile.estado}}</span>
+					</div>
+
+					{{else}}
+					<p style="width: 90%; margin: 10px auto; text-align: center;">{{this.profile.estado}}</p>
+					{{/if}}
+					<table class="table">
+						<tbody>
+
+      <tr>
+        <td>Género</td>
+				{{#if this.profile.genero}}
+        <td>{{this.profile.genero}}</td>
+				{{else}}
+				<td>-</td>
+				{{/if}}
+      </tr>
+      <tr>
+        <td>Edad</td>
+				{{#if this.profile.edad}}
+        <td>{{this.profile.edad}}</td>
+
+				{{else}}
+				<td>-</td>
+				{{/if}}
+      </tr>
+			<tr>
+        <td>País de nacimiento</td>
+				{{#if this.profile.pais}}
+        <td>{{this.profile.pais}}</td>
+				{{else}}
+				<td>-</td>
+				{{/if}}
+      </tr>
+			<tr>
+        <td>Orientación sexual</td>
+				{{#if this.profile.orientacion}}
+        <td>{{this.profile.orientacion}}</td>
+				{{else}}
+				<td>-</td>
+				{{/if}}
+      </tr>
+			<tr>
+        <td>Condición</td>
+				{{#if this.profile.condicion}}
+        <td>{{this.profile.condicion}}</td>
+				{{else}}
+				<td>-</td>
+				{{/if}}
+      </tr>
+    </tbody>
+					</table>
+					{{/with}}
+				</div>
+				<div class="box-white" style="background-color: transparent">
+					<h4 style="color: #b24357">Amigos</h4>
+					<br>
+					{{#each amigos}}
+					<div class="cuadro-amigo">
+						<img src="/login-register.jpg" alt="">
+						<h5>{{this.amigo}} </h5>
+					</div>
+					{{/each}}
+					<h5 class="ver" style="color: #b10c2a; font-size: 12px">Ver más amigos</h5>
+					<h5 class="reportar" style="color: #b10c2a; font-size: 12px">Reportar usuario</h5>
+
+				</div>
+			</div>
+			<div class="col-md-9">
+				<div class="box-white">
+					{{#if esMiMuro}}
+					<form class="muro">
+						<input type="text" name="texto" placeholder="Comparte lo que desees...">
+
+						<label class="btn btn-default btn-file" style="margin-top: 0; padding-top: 10px;">
+    					<span style="font-size: 16px;" class="glyphicon glyphicon-picture" aria-hidden="true"></span> <input type="file" id="myArchivo" style="display: none;">
+						</label>
+						<button class="postear">
+							Postear
+						</button>
+					</form>
+					{{/if}}
+					{{#each fotos}}
+					{{#if isImage}}
+					<div class="col-md-12" style="padding: 0;">
+						<div class="publicacion">
+							<a>{{creador}}</a>
+							<img src="{{this.url}}" alt="{{this.metadata.creadorId}}" style="min-width: 200px; min-height: 200px; max-width: 400px; max-height: 350px; box-shadow: inset 0px -1px 11px -2px rgba(0,0,0,0.75); border-radius: 4.5px; border: 1px solid #f1f1f1; display: block; ">
+							<br>
+							<span class="glyphicon glyphicon-heart like" style="color: #bdc3c7;" aria-hidden="true"></span>
+							{{likes}}
+
+							<form class="muro" style="margin: 0;">
+							<input type="text" style="margin-left: 0;" name="{{_id}}" placeholder="Comentar publicación...">
+						<button  id="comentar">
+							Comentar
+						</button>
+						</form>
+							{{#each comentarios}}
+								<p><span style="color: #B24357">{{this.username}}: </span> {{comentario}}</p>
+							{{/each}}
+						</div>
+					</div>
+
+
+						{{/if}}
+
+					{{/each}}
+					{{#each publicaciones}}
+					{{#if this.esYoutube}}
+					<div class="col-md-12" style="padding: 0;">
+					<div class="publicacion">
+						<a>{{this.de.nombre}}</a>
+          	<iframe width="560" height="349" src={{ytb}} frameborder="0" allowfullscreen >
+          	</iframe>
+						<span class="glyphicon glyphicon-heart like" style="color: #bdc3c7;" aria-hidden="true"></span>
+						{{likes}}
+
+												<form class="muro" style="margin: 0;">
+							<input type="text" style="margin-left: 0;" name="{{_id}}" placeholder="Comentar publicación...">
+						<button  id="comentar">
+							Comentar
+						</button>
+						</form>
+							{{#each comentarios}}
+								<p><span style="color: #B24357">{{this.username}}: </span> {{comentario}}</p>
+							{{/each}}
+					</div>
+					</div>
+					{{else}}
+					<div class="col-md-12" style="padding: 0;">
+					<div class="publicacion">
+						<a>{{this.de.nombre}}</a>
+						<p>{{this.texto}}</p>
+						
+						<span class="glyphicon likes glyphicon-heart like" style="color: {{corazon}}" aria-hidden="true"></span>
+
+						{{likes}}
+
+						<form class="muro" style="margin: 0;">
+							<input type="text" style="margin-left: 0;" name="{{_id}}" placeholder="Comentar publicación...">
+						<button  id="comentar">
+							Comentar
+						</button>
+						</form>
+							{{#each comentarios}}
+								<p><span style="color: #B24357">{{this.username}}: </span> {{comentario}}</p>
+							{{/each}}
+					</div>
+					</div>
+					{{/if}}
+					{{/each}}
+				</div>
+			</div>
+		</div>
+	</div>
+</template>
+
+<template name="amigosModal">
+	 <div class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h4 class="modal-title">Amigos</h4>
+                </div>
+
+                <div class="modal-body">
+                    {{#each amigos}}
+					<div class="cuadro-amigo">
+						<img src="/login-register.jpg" alt="" style="width: 85px; margin-top: 15px;">
+						<h5>{{this.amigo}} </h5>
+					</div>
+					{{/each}}
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</template>
+
+<template name="likes">
+	 <div class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h4 class="modal-title">likes</h4>
+                </div>
+
+                <div class="modal-body">
+                    <table class="table">
+   
+    					<tbody>
+      						<tr>
+        						{{#each likes}}
+        						<td>{{this.de.nombre}}</td>
+        						{{/each}}
+        						
+      						</tr>
+     
+    					</tbody>
+  					</table>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</template>
+
+<template name="Reportar">
+	 <div class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h4 class="modal-title">Reportar</h4>
+                </div>
+
+                <div class="modal-body">
+                   <form>
+  						<div class="form-group">
+  					  		<textarea placeholder="¿Por que deseas reportar este usuario?" class="form-control" rows="10" id="comment"></textarea>
+						</div>
+	 
+  						<button data-dismiss="modal" type="submit" class="btn btn-default">Reportar</button>
+					</form>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</template>
