@@ -1,14 +1,12 @@
 <template name="editar">
   <div class="row">
-    
+
     <div class="col-md-12">
       <br>
       <br>
       <br>
       <br>
-      <br>
-      <br>
-      <br>
+
 
       <div class="box-white" style="padding: 30px;">
         <form>
@@ -29,7 +27,7 @@
               {{>paises}}
           </div>
 
-          
+
 
           <div class="form-group">
             <label for="orientacion">Orientación sexual:</label>
@@ -65,10 +63,8 @@
 
 <template name="avatar">
     <div >
-    
+
     <div >
-      <br>
-      <br>
       <br>
       <br>
 
@@ -78,7 +74,7 @@
           <div class="row">
             <div class="col-md-4">
               <div class="box-white" style="background-color: #B24357">
-                <canvas id="avt"></canvas>
+                <canvas id="avatar"></canvas>
               </div>
             </div>
             <div class="col-md-8">
@@ -86,14 +82,16 @@
                 <ul class="nav nav-tabs">
                   <li class="active"><a data-toggle="tab" href="#home">Rostros</a></li>
                   <li><a data-toggle="tab" href="#menu12">Cabello</a></li>
-                  
+
                   <li><a data-toggle="tab" href="#menu2">Ojos</a></li>
                   <li><a data-toggle="tab" href="#menu3">Expresiones</a></li>
                   <li><a data-toggle="tab" href="#menu4">Cejas</a></li>
                   <li><a data-toggle="tab" href="#menu5">Nariz</a></li>
                   <li><a data-toggle="tab" href="#menu6">Boca</a></li>
+                  {{#if esHombre}}
                   <li><a data-toggle="tab" href="#menu7">Barba</a></li>
                   <li><a data-toggle="tab" href="#menu8">Bigote</a></li>
+                  {{/if}}
                   <li><a data-toggle="tab" href="#menu9">Ropa</a></li>
                   <li><a data-toggle="tab" href="#menu10">Fondo</a></li>
                   <li><a data-toggle="tab" href="#menu11">Accesorios</a></li>
@@ -101,7 +99,7 @@
 
                 <div class="tab-content">
                   <div id="home" class="tab-pane fade in active">
-                    
+
                      <ul class="nav nav-tabs">
                         <li class="active"><a data-toggle="tab" href="#color1">
                           <span style="display: inline-block; background-color: #F7D8C4; width: 40px; height: 40px; border-radius: 70%;margin-right: 15px; margin-left: 15px;"></span>
@@ -109,816 +107,575 @@
                         <li><a data-toggle="tab" href="#color2">
                            <span style="display: inline-block; background-color: #BF7965; width: 40px; height: 40px; border-radius: 70%;margin-right: 15px;"></span>
                         </a></li>
-                        
+
                         <li><a data-toggle="tab" href="#color3">
                            <span style="display: inline-block; background-color: #864B25; width: 40px; height: 40px; border-radius: 70%;margin-right: 15px;"></span>
                         </a></li>
                         <li><a data-toggle="tab" href="#color4">
                            <span style="display: inline-block; background-color: #DDA572; width: 40px; height: 40px; border-radius: 70%; margin-right: 15px;"></span>
                         </a></li>
-                  
+
                       </ul>
-                      
+
                       <div class="tab-content">
                         <div id="color1" class="tab-pane fade in active">
                             <div class="avatares">
-                              <img src="/avatares/rostros/blanco/1.png">
-                              <img src="/avatares/rostros/blanco/2.png">
-                              <img src="/avatares/rostros/blanco/3.png">
-                              <img src="/avatares/rostros/blanco/4.png">
-                              <img src="/avatares/rostros/blanco/5.png">
-                              <img src="/avatares/rostros/blanco/6.png">
-                              <img src="/avatares/rostros/blanco/7.png">
-                              <img src="/avatares/rostros/blanco/8.png">
-                              <img src="/avatares/rostros/blanco/9.png">
+                              <img src="/avatares/a/rostros/{{tipo}}/blanco/1.png" class="rostros">
+                              <img src="/avatares/a/rostros/{{tipo}}/blanco/2.png" class="rostros">
+                              <img src="/avatares/a/rostros/{{tipo}}/blanco/3.png" class="rostros">
+                              <img src="/avatares/a/rostros/{{tipo}}/blanco/4.png" class="rostros">
+                              <img src="/avatares/a/rostros/{{tipo}}/blanco/5.png" class="rostros">
+                              <img src="/avatares/a/rostros/{{tipo}}/blanco/6.png" class="rostros">
+                              <img src="/avatares/a/rostros/{{tipo}}/blanco/7.png" class="rostros">
+                              <img src="/avatares/a/rostros/{{tipo}}/blanco/8.png" class="rostros">
+                              <img src="/avatares/a/rostros/{{tipo}}/blanco/9.png" class="rostros">
                             </div>
                         </div>
                         <div id="color2" class="tab-pane fade">
                             <div class="avatares">
-                              <img src="/avatares/rostros/moreno/1.png">
-                              <img src="/avatares/rostros/moreno/2.png">
-                              <img src="/avatares/rostros/moreno/3.png">
-                              <img src="/avatares/rostros/moreno/4.png">
-                              <img src="/avatares/rostros/moreno/5.png">
-                              <img src="/avatares/rostros/moreno/6.png">
-                              <img src="/avatares/rostros/moreno/7.png">
-                              <img src="/avatares/rostros/moreno/8.png">
-                              <img src="/avatares/rostros/moreno/9.png">
+                              <img src="/avatares/a/rostros/{{tipo}}/moreno/1.png" class="rostros">
+                              <img src="/avatares/a/rostros/{{tipo}}/moreno/2.png" class="rostros">
+                              <img src="/avatares/a/rostros/{{tipo}}/moreno/3.png" class="rostros">
+                              <img src="/avatares/a/rostros/{{tipo}}/moreno/4.png" class="rostros">
+                              <img src="/avatares/a/rostros/{{tipo}}/moreno/5.png" class="rostros">
+                              <img src="/avatares/a/rostros/{{tipo}}/moreno/6.png" class="rostros">
+                              <img src="/avatares/a/rostros/{{tipo}}/moreno/7.png" class="rostros">
+                              <img src="/avatares/a/rostros/{{tipo}}/moreno/8.png" class="rostros">
+                              <img src="/avatares/a/rostros/{{tipo}}/moreno/9.png" class="rostros">
                             </div>
                         </div>
                         <div id="color3" class="tab-pane fade">
                             <div class="avatares">
-                              <img src="/avatares/rostros/negro/1.png">
-                              <img src="/avatares/rostros/negro/2.png">
-                              <img src="/avatares/rostros/negro/3.png">
-                              <img src="/avatares/rostros/negro/4.png">
-                              <img src="/avatares/rostros/negro/5.png">
-                              <img src="/avatares/rostros/negro/6.png">
-                              <img src="/avatares/rostros/negro/7.png">
-                              <img src="/avatares/rostros/negro/8.png">
-                              <img src="/avatares/rostros/negro/9.png">
+                              <img src="/avatares/a/rostros/{{tipo}}/negro/1.png" class="rostros">
+                              <img src="/avatares/a/rostros/{{tipo}}/negro/2.png" class="rostros">
+                              <img src="/avatares/a/rostros/{{tipo}}/negro/3.png" class="rostros">
+                              <img src="/avatares/a/rostros/{{tipo}}/negro/4.png" class="rostros">
+                              <img src="/avatares/a/rostros/{{tipo}}/negro/5.png" class="rostros">
+                              <img src="/avatares/a/rostros/{{tipo}}/negro/6.png" class="rostros">
+                              <img src="/avatares/a/rostros/{{tipo}}/negro/7.png" class="rostros">
+                              <img src="/avatares/a/rostros/{{tipo}}/negro/8.png" class="rostros">
+                              <img src="/avatares/a/rostros/{{tipo}}/negro/9.png" class="rostros">
                             </div>
                         </div>
                         <div id="color4" class="tab-pane fade">
                             <div class="avatares">
-                              <img src="/avatares/rostros/trigueno/1.png">
-                              <img src="/avatares/rostros/trigueno/2.png">
-                              <img src="/avatares/rostros/trigueno/3.png">
-                              <img src="/avatares/rostros/trigueno/4.png">
-                              <img src="/avatares/rostros/trigueno/5.png">
-                              <img src="/avatares/rostros/trigueno/6.png">
-                              <img src="/avatares/rostros/trigueno/7.png">
-                              <img src="/avatares/rostros/trigueno/8.png">
-                              <img src="/avatares/rostros/trigueno/9.png">
+                              <img src="/avatares/a/rostros/{{tipo}}/trigueno/1.png" class="rostros">
+                              <img src="/avatares/a/rostros/{{tipo}}/trigueno/2.png" class="rostros">
+                              <img src="/avatares/a/rostros/{{tipo}}/trigueno/3.png" class="rostros">
+                              <img src="/avatares/a/rostros/{{tipo}}/trigueno/4.png" class="rostros">
+                              <img src="/avatares/a/rostros/{{tipo}}/trigueno/5.png" class="rostros">
+                              <img src="/avatares/a/rostros/{{tipo}}/trigueno/6.png" class="rostros">
+                              <img src="/avatares/a/rostros/{{tipo}}/trigueno/7.png" class="rostros">
+                              <img src="/avatares/a/rostros/{{tipo}}/trigueno/8.png" class="rostros">
+                              <img src="/avatares/a/rostros/{{tipo}}/trigueno/9.png" class="rostros">
                             </div>
                         </div>
                       </div>
-                 
+
                   </div>
                   <div id="menu12" class="tab-pane fade ">
-                    
-                      
-                      
-                      <div class="avatares">
-                              <img src="/avatares/cabello/1.png">
-                              <img src="/avatares/cabello/2.png">
-                              <img src="/avatares/cabello/3.png">
-                              <img src="/avatares/cabello/4.png">
-                              <img src="/avatares/cabello/5.png">
-                              <img src="/avatares/cabello/6.png">
-                              <img src="/avatares/cabello/7.png">
-                              <img src="/avatares/cabello/8.png">
-                              <img src="/avatares/cabello/9.png">
-                    </div>
-                      
+
+                    <ul class="nav nav-tabs">
+                       <li class="active"><a data-toggle="tab" href="#colorc1">
+                         <span style="display: inline-block; background-color: brown; width: 40px; height: 40px; border-radius: 70%;margin-right: 15px; margin-left: 15px;"></span>
+                       </a></li>
+                       <li><a data-toggle="tab" href="#colorc2">
+                          <span style="display: inline-block; background-color: black; width: 40px; height: 40px; border-radius: 70%;margin-right: 15px;"></span>
+                       </a></li>
+
+                       <li><a data-toggle="tab" href="#colorc3">
+                          <span style="display: inline-block; background-color: #ddd; width: 40px; height: 40px; border-radius: 70%;margin-right: 15px;"></span>
+                       </a></li>
+                       <li><a data-toggle="tab" href="#colorc4">
+                          <span style="display: inline-block; background-color: #f1c40f; width: 40px; height: 40px; border-radius: 70%; margin-right: 15px;"></span>
+                       </a></li>
+
+                     </ul>
+
+                     <div class="tab-content">
+                       <div id="colorc1" class="tab-pane fade in active">
+                           <div class="avatares">
+                             <img src="/avatares/a/cabello/{{tipo}}/castanoclaro/1.png" class="cabellos">
+                             <img src="/avatares/a/cabello/{{tipo}}/castanoclaro/2.png" class="cabellos">
+                             <img src="/avatares/a/cabello/{{tipo}}/castanoclaro/3.png" class="cabellos">
+                             <img src="/avatares/a/cabello/{{tipo}}/castanoclaro/4.png" class="cabellos">
+                             <img src="/avatares/a/cabello/{{tipo}}/castanoclaro/5.png" class="cabellos">
+                             <img src="/avatares/a/cabello/{{tipo}}/castanoclaro/6.png" class="cabellos">
+                             <img src="/avatares/a/cabello/{{tipo}}/castanoclaro/7.png" class="cabellos">
+                             <img src="/avatares/a/cabello/{{tipo}}/castanoclaro/8.png" class="cabellos">
+                             <img src="/avatares/a/cabello/{{tipo}}/castanoclaro/9.png" class="cabellos">
+                             <img src="/avatares/a/cabello/{{tipo}}/castanoclaro/10.png" class="cabellos">
+                             <img src="/avatares/a/cabello/{{tipo}}/castanoclaro/11.png" class="cabellos">
+                             <img src="/avatares/a/cabello/{{tipo}}/castanoclaro/12.png" class="cabellos">
+                             <img src="/avatares/a/cabello/{{tipo}}/castanoclaro/13.png" class="cabellos">
+                             <img src="/avatares/a/cabello/{{tipo}}/castanoclaro/14.png" class="cabellos">
+                             <img src="/avatares/a/cabello/{{tipo}}/castanoclaro/15.png" class="cabellos">
+                             {{#if esMujer}}
+                             <img src="/avatares/a/cabello/{{tipo}}/castanoclaro/16.png" class="cabellos">
+                             <img src="/avatares/a/cabello/{{tipo}}/castanoclaro/17.png" class="cabellos">
+                             <img src="/avatares/a/cabello/{{tipo}}/castanoclaro/18.png" class="cabellos">
+                             {{/if}}
+                           </div>
+                       </div>
+                       <div id="colorc2" class="tab-pane fade">
+                           <div class="avatares">
+                             <img src="/avatares/a/cabello/{{tipo}}/castanooscuro/1.png" class="cabellos">
+                             <img src="/avatares/a/cabello/{{tipo}}/castanooscuro/2.png" class="cabellos">
+                             <img src="/avatares/a/cabello/{{tipo}}/castanooscuro/3.png" class="cabellos">
+                             <img src="/avatares/a/cabello/{{tipo}}/castanooscuro/4.png" class="cabellos">
+                             <img src="/avatares/a/cabello/{{tipo}}/castanooscuro/5.png" class="cabellos">
+                             <img src="/avatares/a/cabello/{{tipo}}/castanooscuro/6.png" class="cabellos">
+                             <img src="/avatares/a/cabello/{{tipo}}/castanooscuro/7.png" class="cabellos">
+                             <img src="/avatares/a/cabello/{{tipo}}/castanooscuro/8.png" class="cabellos">
+                             <img src="/avatares/a/cabello/{{tipo}}/castanooscuro/9.png" class="cabellos">
+                             <img src="/avatares/a/cabello/{{tipo}}/castanooscuro/10.png" class="cabellos">
+                             <img src="/avatares/a/cabello/{{tipo}}/castanooscuro/11.png" class="cabellos">
+                             <img src="/avatares/a/cabello/{{tipo}}/castanooscuro/12.png" class="cabellos">
+                             <img src="/avatares/a/cabello/{{tipo}}/castanooscuro/13.png" class="cabellos">
+                             <img src="/avatares/a/cabello/{{tipo}}/castanooscuro/14.png" class="cabellos">
+                             <img src="/avatares/a/cabello/{{tipo}}/castanooscuro/15.png" class="cabellos">
+                             {{#if esMujer}}
+                             <img src="/avatares/a/cabello/{{tipo}}/castanooscuro/16.png" class="cabellos">
+                             <img src="/avatares/a/cabello/{{tipo}}/castanooscuro/17.png" class="cabellos">
+                             <img src="/avatares/a/cabello/{{tipo}}/castanooscuro/18.png" class="cabellos">
+                             {{/if}}
+                           </div>
+                       </div>
+                       <div id="colorc3" class="tab-pane fade">
+                           <div class="avatares">
+                             <img src="/avatares/a/cabello/{{tipo}}/gris/1.png" class="cabellos">
+                             <img src="/avatares/a/cabello/{{tipo}}/gris/2.png" class="cabellos">
+                             <img src="/avatares/a/cabello/{{tipo}}/gris/3.png" class="cabellos">
+                             <img src="/avatares/a/cabello/{{tipo}}/gris/4.png" class="cabellos">
+                             <img src="/avatares/a/cabello/{{tipo}}/gris/5.png" class="cabellos">
+                             <img src="/avatares/a/cabello/{{tipo}}/gris/6.png" class="cabellos">
+                             <img src="/avatares/a/cabello/{{tipo}}/gris/7.png" class="cabellos">
+                             <img src="/avatares/a/cabello/{{tipo}}/gris/8.png" class="cabellos">
+                             <img src="/avatares/a/cabello/{{tipo}}/gris/9.png" class="cabellos">
+                             <img src="/avatares/a/cabello/{{tipo}}/gris/10.png" class="cabellos">
+                             <img src="/avatares/a/cabello/{{tipo}}/gris/11.png" class="cabellos">
+                             <img src="/avatares/a/cabello/{{tipo}}/gris/12.png" class="cabellos">
+                             <img src="/avatares/a/cabello/{{tipo}}/gris/13.png" class="cabellos">
+                             <img src="/avatares/a/cabello/{{tipo}}/gris/14.png" class="cabellos">
+                             {{#if esMujer}}
+                             <img src="/avatares/a/cabello/{{tipo}}/gris/15.png" class="cabellos">
+                             <img src="/avatares/a/cabello/{{tipo}}/gris/16.png" class="cabellos">
+                             <img src="/avatares/a/cabello/{{tipo}}/gris/17.png" class="cabellos">
+                             <img src="/avatares/a/cabello/{{tipo}}/gris/18.png" class="cabellos">
+                             {{/if}}
+                           </div>
+                       </div>
+                       <div id="colorc4" class="tab-pane fade">
+                           <div class="avatares">
+                             <img src="/avatares/a/cabello/{{tipo}}/rubio/1.png" class="cabellos">
+                             <img src="/avatares/a/cabello/{{tipo}}/rubio/2.png" class="cabellos">
+                             <img src="/avatares/a/cabello/{{tipo}}/rubio/3.png" class="cabellos">
+                             <img src="/avatares/a/cabello/{{tipo}}/rubio/4.png" class="cabellos">
+                             <img src="/avatares/a/cabello/{{tipo}}/rubio/5.png" class="cabellos">
+                             <img src="/avatares/a/cabello/{{tipo}}/rubio/6.png" class="cabellos">
+                             <img src="/avatares/a/cabello/{{tipo}}/rubio/7.png" class="cabellos">
+                             <img src="/avatares/a/cabello/{{tipo}}/rubio/8.png" class="cabellos">
+                             <img src="/avatares/a/cabello/{{tipo}}/rubio/9.png" class="cabellos">
+                             <img src="/avatares/a/cabello/{{tipo}}/rubio/10.png" class="cabellos">
+                             <img src="/avatares/a/cabello/{{tipo}}/rubio/11.png" class="cabellos">
+                             <img src="/avatares/a/cabello/{{tipo}}/rubio/12.png" class="cabellos">
+                             <img src="/avatares/a/cabello/{{tipo}}/rubio/13.png" class="cabellos">
+                             <img src="/avatares/a/cabello/{{tipo}}/rubio/14.png" class="cabellos">
+                             <img src="/avatares/a/cabello/{{tipo}}/rubio/15.png" class="cabellos">
+                             {{#if esMujer}}
+                             <img src="/avatares/a/cabello/{{tipo}}/rubio/16.png" class="cabellos">
+                             <img src="/avatares/a/cabello/{{tipo}}/rubio/17.png" class="cabellos">
+                             <img src="/avatares/a/cabello/{{tipo}}/rubio/18.png" class="cabellos">
+                             {{/if}}
+                           </div>
+                       </div>
+                     </div>
+
+
+
+
                   </div>
-                 
+
                   <div id="menu2" class="tab-pane fade">
                     <ul class="nav nav-tabs">
-                        <li class="active"><a data-toggle="tab" href="#c1">
+                        <li class="active"><a data-toggle="tab" href="#coloro1">
                           <span style="display: inline-block; background-color: #0D9CBC; width: 40px; height: 40px; border-radius: 70%;margin-right: 15px; margin-left: 15px;"></span>
                         </a></li>
-                        <li><a data-toggle="tab" href="#c2">
+                        <li><a data-toggle="tab" href="#coloro2">
                            <span style="display: inline-block; background-color: #360F06; width: 40px; height: 40px; border-radius: 70%;margin-right: 15px;"></span>
                         </a></li>
-                        
-                        <li><a data-toggle="tab" href="#c3">
+
+                        <li><a data-toggle="tab" href="#coloro3">
                            <span style="display: inline-block; background-color: #935E11; width: 40px; height: 40px; border-radius: 70%;margin-right: 15px;"></span>
                         </a></li>
-                        <li><a data-toggle="tab" href="#c4">
+                        <li><a data-toggle="tab" href="#coloro4">
                            <span style="display: inline-block; background-color: #369453; width: 40px; height: 40px; border-radius: 70%; margin-right: 15px;"></span>
                         </a></li>
-                  
+
                       </ul>
-                      
+
                       <div class="tab-content">
-                        <div id="c1" class="tab-pane fade in active">
+                        <div id="coloro1" class="tab-pane fade in active">
                             <div class="avatares">
-                              <img src="/avatares/ojos/azul/1.png">
-                              <img src="/avatares/ojos/azul/2.png">
-                              <img src="/avatares/ojos/azul/3.png">
-                              <img src="/avatares/ojos/azul/4.png">
-                              <img src="/avatares/ojos/azul/5.png">
-                              <img src="/avatares/ojos/azul/6.png">
-                              <img src="/avatares/ojos/azul/7.png">
-                              <img src="/avatares/ojos/azul/8.png">
-                              <img src="/avatares/ojos/azul/9.png">
+                              <img src="/avatares/a/ojos/{{tipo}}/azul/1.png" class="ojos">
+                              <img src="/avatares/a/ojos/{{tipo}}/azul/2.png" class="ojos">
+                              <img src="/avatares/a/ojos/{{tipo}}/azul/3.png" class="ojos">
+                              <img src="/avatares/a/ojos/{{tipo}}/azul/4.png" class="ojos">
+
+                              <img src="/avatares/a/ojos/{{tipo}}/azul/6.png" class="ojos">
+                              <img src="/avatares/a/ojos/{{tipo}}/azul/7.png" class="ojos">
+                              <img src="/avatares/a/ojos/{{tipo}}/azul/8.png" class="ojos">
+                              <img src="/avatares/a/ojos/{{tipo}}/azul/9.png" class="ojos">
                             </div>
                         </div>
-                        <div id="c2" class="tab-pane fade">
+                        <div id="coloro2" class="tab-pane fade">
                             <div class="avatares">
-                              <img src="/avatares/ojos/marron/1.png">
-                              <img src="/avatares/ojos/marron/2.png">
-                              <img src="/avatares/ojos/marron/3.png">
-                              <img src="/avatares/ojos/marron/4.png">
-                              <img src="/avatares/ojos/marron/5.png">
-                              <img src="/avatares/ojos/marron/6.png">
-                              <img src="/avatares/ojos/marron/7.png">
-                              <img src="/avatares/ojos/marron/8.png">
-                              <img src="/avatares/ojos/marron/9.png">
+                              <img src="/avatares/a/ojos/{{tipo}}/marronoscuro/1.png" class="ojos">
+                              <img src="/avatares/a/ojos/{{tipo}}/marronoscuro/2.png" class="ojos">
+                              <img src="/avatares/a/ojos/{{tipo}}/marronoscuro/3.png" class="ojos">
+                              <img src="/avatares/a/ojos/{{tipo}}/marronoscuro/4.png" class="ojos">
+
+                              <img src="/avatares/a/ojos/{{tipo}}/marronoscuro/6.png" class="ojos">
+                              <img src="/avatares/a/ojos/{{tipo}}/marronoscuro/7.png" class="ojos">
+                              <img src="/avatares/a/ojos/{{tipo}}/marronoscuro/8.png" class="ojos">
+                              <img src="/avatares/a/ojos/{{tipo}}/marronoscuro/9.png" class="ojos">
                             </div>
                         </div>
-                        <div id="c3" class="tab-pane fade">
+                        <div id="coloro3" class="tab-pane fade">
                             <div class="avatares">
-                              <img src="/avatares/ojos/miel/1.png">
-                              <img src="/avatares/ojos/miel/2.png">
-                              <img src="/avatares/ojos/miel/3.png">
-                              <img src="/avatares/ojos/miel/4.png">
-                              <img src="/avatares/ojos/miel/5.png">
-                              <img src="/avatares/ojos/miel/6.png">
-                              <img src="/avatares/ojos/miel/7.png">
-                              <img src="/avatares/ojos/miel/8.png">
-                              <img src="/avatares/ojos/miel/9.png">
+                              <img src="/avatares/a/ojos/{{tipo}}/miel/1.png" class="ojos">
+                              <img src="/avatares/a/ojos/{{tipo}}/miel/2.png" class="ojos">
+                              <img src="/avatares/a/ojos/{{tipo}}/miel/3.png" class="ojos">
+                              <img src="/avatares/a/ojos/{{tipo}}/miel/4.png" class="ojos">
+
+                              <img src="/avatares/a/ojos/{{tipo}}/miel/6.png" class="ojos">
+                              <img src="/avatares/a/ojos/{{tipo}}/miel/7.png" class="ojos">
+                              <img src="/avatares/a/ojos/{{tipo}}/miel/8.png" class="ojos">
+                              <img src="/avatares/a/ojos/{{tipo}}/miel/9.png" class="ojos">
                             </div>
                         </div>
-                        <div id="c4" class="tab-pane fade">
+                        <div id="coloro4" class="tab-pane fade">
                             <div class="avatares">
-                              <img src="/avatares/ojos/verde/1.png">
-                              <img src="/avatares/ojos/verde/2.png">
-                              <img src="/avatares/ojos/verde/3.png">
-                              <img src="/avatares/ojos/verde/4.png">
-                              <img src="/avatares/ojos/verde/5.png">
-                              <img src="/avatares/ojos/verde/6.png">
-                              <img src="/avatares/ojos/verde/7.png">
-                              <img src="/avatares/ojos/verde/8.png">
-                              <img src="/avatares/ojos/verde/9.png">
+                              <img src="/avatares/a/ojos/{{tipo}}/verde/1.png" class="ojos">
+                              <img src="/avatares/a/ojos/{{tipo}}/verde/2.png" class="ojos">
+                              <img src="/avatares/a/ojos/{{tipo}}/verde/3.png" class="ojos">
+                              <img src="/avatares/a/ojos/{{tipo}}/verde/4.png" class="ojos">
+
+                              <img src="/avatares/a/ojos/{{tipo}}/verde/6.png" class="ojos">
+                              <img src="/avatares/a/ojos/{{tipo}}/verde/7.png" class="ojos">
+                              <img src="/avatares/a/ojos/{{tipo}}/verde/8.png" class="ojos">
+                              <img src="/avatares/a/ojos/{{tipo}}/verde/9.png" class="ojos">
                             </div>
                         </div>
                       </div>
                   </div>
                   <div id="menu3" class="tab-pane fade">
-                    <ul class="nav nav-tabs">
-                        <li class="active"><a data-toggle="tab" href="#color1">
-                          <span style="display: inline-block; background-color: #F7D8C4; width: 40px; height: 40px; border-radius: 70%;margin-right: 15px; margin-left: 15px;"></span>
-                        </a></li>
-                        <li><a data-toggle="tab" href="#color2">
-                           <span style="display: inline-block; background-color: #BF7965; width: 40px; height: 40px; border-radius: 70%;margin-right: 15px;"></span>
-                        </a></li>
-                        
-                        <li><a data-toggle="tab" href="#color3">
-                           <span style="display: inline-block; background-color: #864B25; width: 40px; height: 40px; border-radius: 70%;margin-right: 15px;"></span>
-                        </a></li>
-                        <li><a data-toggle="tab" href="#color4">
-                           <span style="display: inline-block; background-color: #DDA572; width: 40px; height: 40px; border-radius: 70%; margin-right: 15px;"></span>
-                        </a></li>
-                  
-                      </ul>
-                      
-                      <div class="tab-content">
-                        <div id="color1" class="tab-pane fade in active">
-                            <div class="avatares">
-                              <img src="/avatares/rostros/blanco/1.png">
-                              <img src="/avatares/rostros/blanco/2.png">
-                              <img src="/avatares/rostros/blanco/3.png">
-                              <img src="/avatares/rostros/blanco/4.png">
-                              <img src="/avatares/rostros/blanco/5.png">
-                              <img src="/avatares/rostros/blanco/6.png">
-                              <img src="/avatares/rostros/blanco/7.png">
-                              <img src="/avatares/rostros/blanco/8.png">
-                              <img src="/avatares/rostros/blanco/9.png">
-                            </div>
-                        </div>
-                        <div id="color2" class="tab-pane fade">
-                            <div class="avatares">
-                              <img src="/avatares/rostros/moreno/1.png">
-                              <img src="/avatares/rostros/moreno/2.png">
-                              <img src="/avatares/rostros/moreno/3.png">
-                              <img src="/avatares/rostros/moreno/4.png">
-                              <img src="/avatares/rostros/moreno/5.png">
-                              <img src="/avatares/rostros/moreno/6.png">
-                              <img src="/avatares/rostros/moreno/7.png">
-                              <img src="/avatares/rostros/moreno/8.png">
-                              <img src="/avatares/rostros/moreno/9.png">
-                            </div>
-                        </div>
-                        <div id="color3" class="tab-pane fade">
-                            <div class="avatares">
-                              <img src="/avatares/rostros/negro/1.png">
-                              <img src="/avatares/rostros/negro/2.png">
-                              <img src="/avatares/rostros/negro/3.png">
-                              <img src="/avatares/rostros/negro/4.png">
-                              <img src="/avatares/rostros/negro/5.png">
-                              <img src="/avatares/rostros/negro/6.png">
-                              <img src="/avatares/rostros/negro/7.png">
-                              <img src="/avatares/rostros/negro/8.png">
-                              <img src="/avatares/rostros/negro/9.png">
-                            </div>
-                        </div>
-                        <div id="color4" class="tab-pane fade">
-                            <div class="avatares">
-                              <img src="/avatares/rostros/trigueno/1.png">
-                              <img src="/avatares/rostros/trigueno/2.png">
-                              <img src="/avatares/rostros/trigueno/3.png">
-                              <img src="/avatares/rostros/trigueno/4.png">
-                              <img src="/avatares/rostros/trigueno/5.png">
-                              <img src="/avatares/rostros/trigueno/6.png">
-                              <img src="/avatares/rostros/trigueno/7.png">
-                              <img src="/avatares/rostros/trigueno/8.png">
-                              <img src="/avatares/rostros/trigueno/9.png">
-                            </div>
-                        </div>
-                      </div>
+                    <div class="avatares">
+                      <img src="/avatares/a/expresiones/1.png" class="expresiones">
+                      <img src="/avatares/a/expresiones/2.png" class="expresiones">
+                      <img src="/avatares/a/expresiones/3.png" class="expresiones">
+                      <img src="/avatares/a/expresiones/4.png" class="expresiones">
+                      <img src="/avatares/a/expresiones/5.png" class="expresiones">
+                      <img src="/avatares/a/expresiones/6.png" class="expresiones">
+                      <img src="/avatares/a/expresiones/7.png" class="expresiones">
+                      <img src="/avatares/a/expresiones/8.png" class="expresiones">
+                      <img src="/avatares/a/expresiones/9.png" class="expresiones">
+                    </div>
+
                   </div>
                   <div id="menu4" class="tab-pane fade">
                     <ul class="nav nav-tabs">
-                        <li class="active"><a data-toggle="tab" href="#color1">
+                        <li class="active"><a data-toggle="tab" href="#colorce1">
                           <span style="display: inline-block; background-color: #F7D8C4; width: 40px; height: 40px; border-radius: 70%;margin-right: 15px; margin-left: 15px;"></span>
                         </a></li>
-                        <li><a data-toggle="tab" href="#color2">
+                        <li><a data-toggle="tab" href="#colorce2">
                            <span style="display: inline-block; background-color: #BF7965; width: 40px; height: 40px; border-radius: 70%;margin-right: 15px;"></span>
                         </a></li>
-                        
-                        <li><a data-toggle="tab" href="#color3">
+
+                        <li><a data-toggle="tab" href="#colorce3">
                            <span style="display: inline-block; background-color: #864B25; width: 40px; height: 40px; border-radius: 70%;margin-right: 15px;"></span>
                         </a></li>
-                        <li><a data-toggle="tab" href="#color4">
+                        <li><a data-toggle="tab" href="#colorce4">
                            <span style="display: inline-block; background-color: #DDA572; width: 40px; height: 40px; border-radius: 70%; margin-right: 15px;"></span>
                         </a></li>
-                  
+
                       </ul>
-                      
+
                       <div class="tab-content">
-                        <div id="color1" class="tab-pane fade in active">
+                        <div id="colorce1" class="tab-pane fade in active">
                             <div class="avatares">
-                              <img src="/avatares/rostros/blanco/1.png">
-                              <img src="/avatares/rostros/blanco/2.png">
-                              <img src="/avatares/rostros/blanco/3.png">
-                              <img src="/avatares/rostros/blanco/4.png">
-                              <img src="/avatares/rostros/blanco/5.png">
-                              <img src="/avatares/rostros/blanco/6.png">
-                              <img src="/avatares/rostros/blanco/7.png">
-                              <img src="/avatares/rostros/blanco/8.png">
-                              <img src="/avatares/rostros/blanco/9.png">
+                              <img src="/avatares/a/cejas/{{tipo}}/castanoclaro/1.png" class="cejas">
+                              <img src="/avatares/a/cejas/{{tipo}}/castanoclaro/2.png" class="cejas">
+                              <img src="/avatares/a/cejas/{{tipo}}/castanoclaro/3.png" class="cejas">
+                              <img src="/avatares/a/cejas/{{tipo}}/castanoclaro/4.png" class="cejas">
+                              <img src="/avatares/a/cejas/{{tipo}}/castanoclaro/5.png" class="cejas">
+                              <img src="/avatares/a/cejas/{{tipo}}/castanoclaro/6.png" class="cejas">
+                              <img src="/avatares/a/cejas/{{tipo}}/castanoclaro/7.png" class="cejas">
+                              <img src="/avatares/a/cejas/{{tipo}}/castanoclaro/8.png" class="cejas">
+                              <img src="/avatares/a/cejas/{{tipo}}/castanoclaro/9.png" class="cejas">
                             </div>
                         </div>
-                        <div id="color2" class="tab-pane fade">
+                        <div id="colorce2" class="tab-pane fade">
                             <div class="avatares">
-                              <img src="/avatares/rostros/moreno/1.png">
-                              <img src="/avatares/rostros/moreno/2.png">
-                              <img src="/avatares/rostros/moreno/3.png">
-                              <img src="/avatares/rostros/moreno/4.png">
-                              <img src="/avatares/rostros/moreno/5.png">
-                              <img src="/avatares/rostros/moreno/6.png">
-                              <img src="/avatares/rostros/moreno/7.png">
-                              <img src="/avatares/rostros/moreno/8.png">
-                              <img src="/avatares/rostros/moreno/9.png">
+                              <img src="/avatares/a/cejas/{{tipo}}/castanooscuro/1.png" class="cejas">
+                              <img src="/avatares/a/cejas/{{tipo}}/castanooscuro/2.png" class="cejas">
+                              <img src="/avatares/a/cejas/{{tipo}}/castanooscuro/3.png" class="cejas">
+                              <img src="/avatares/a/cejas/{{tipo}}/castanooscuro/4.png" class="cejas">
+                              <img src="/avatares/a/cejas/{{tipo}}/castanooscuro/5.png" class="cejas">
+                              <img src="/avatares/a/cejas/{{tipo}}/castanooscuro/6.png" class="cejas">
+                              <img src="/avatares/a/cejas/{{tipo}}/castanooscuro/7.png" class="cejas">
+                              <img src="/avatares/a/cejas/{{tipo}}/castanooscuro/8.png" class="cejas">
+                              <img src="/avatares/a/cejas/{{tipo}}/castanooscuro/9.png" class="cejas">
                             </div>
                         </div>
-                        <div id="color3" class="tab-pane fade">
+                        <div id="colorce3" class="tab-pane fade">
                             <div class="avatares">
-                              <img src="/avatares/rostros/negro/1.png">
-                              <img src="/avatares/rostros/negro/2.png">
-                              <img src="/avatares/rostros/negro/3.png">
-                              <img src="/avatares/rostros/negro/4.png">
-                              <img src="/avatares/rostros/negro/5.png">
-                              <img src="/avatares/rostros/negro/6.png">
-                              <img src="/avatares/rostros/negro/7.png">
-                              <img src="/avatares/rostros/negro/8.png">
-                              <img src="/avatares/rostros/negro/9.png">
+                              <img src="/avatares/a/cejas/{{tipo}}/gris/1.png" class="cejas">
+                              <img src="/avatares/a/cejas/{{tipo}}/gris/2.png" class="cejas">
+                              <img src="/avatares/a/cejas/{{tipo}}/gris/3.png" class="cejas">
+                              <img src="/avatares/a/cejas/{{tipo}}/gris/4.png" class="cejas">
+                              <img src="/avatares/a/cejas/{{tipo}}/gris/5.png" class="cejas">
+                              <img src="/avatares/a/cejas/{{tipo}}/gris/6.png" class="cejas">
+                              <img src="/avatares/a/cejas/{{tipo}}/gris/7.png" class="cejas">
+                              <img src="/avatares/a/cejas/{{tipo}}/gris/8.png" class="cejas">
+                              <img src="/avatares/a/cejas/{{tipo}}/gris/9.png" class="cejas">
                             </div>
                         </div>
-                        <div id="color4" class="tab-pane fade">
+                        <div id="colorce4" class="tab-pane fade">
                             <div class="avatares">
-                              <img src="/avatares/rostros/trigueno/1.png">
-                              <img src="/avatares/rostros/trigueno/2.png">
-                              <img src="/avatares/rostros/trigueno/3.png">
-                              <img src="/avatares/rostros/trigueno/4.png">
-                              <img src="/avatares/rostros/trigueno/5.png">
-                              <img src="/avatares/rostros/trigueno/6.png">
-                              <img src="/avatares/rostros/trigueno/7.png">
-                              <img src="/avatares/rostros/trigueno/8.png">
-                              <img src="/avatares/rostros/trigueno/9.png">
+                              <img src="/avatares/a/cejas/{{tipo}}/rubio/1.png" class="cejas">
+                              <img src="/avatares/a/cejas/{{tipo}}/rubio/2.png" class="cejas">
+                              <img src="/avatares/a/cejas/{{tipo}}/rubio/3.png" class="cejas">
+                              <img src="/avatares/a/cejas/{{tipo}}/rubio/4.png" class="cejas">
+                              <img src="/avatares/a/cejas/{{tipo}}/rubio/5.png" class="cejas">
+                              <img src="/avatares/a/cejas/{{tipo}}/rubio/6.png" class="cejas">
+                              <img src="/avatares/a/cejas/{{tipo}}/rubio/7.png" class="cejas">
+                              <img src="/avatares/a/cejas/{{tipo}}/rubio/8.png" class="cejas">
+                              <img src="/avatares/a/cejas/{{tipo}}/rubio/9.png" class="cejas">
                             </div>
                         </div>
                       </div>
                   </div>
                   <div id="menu5" class="tab-pane fade">
-                    <ul class="nav nav-tabs">
-                        <li class="active"><a data-toggle="tab" href="#color1">
-                          <span style="display: inline-block; background-color: #F7D8C4; width: 40px; height: 40px; border-radius: 70%;margin-right: 15px; margin-left: 15px;"></span>
-                        </a></li>
-                        <li><a data-toggle="tab" href="#color2">
-                           <span style="display: inline-block; background-color: #BF7965; width: 40px; height: 40px; border-radius: 70%;margin-right: 15px;"></span>
-                        </a></li>
-                        
-                        <li><a data-toggle="tab" href="#color3">
-                           <span style="display: inline-block; background-color: #864B25; width: 40px; height: 40px; border-radius: 70%;margin-right: 15px;"></span>
-                        </a></li>
-                        <li><a data-toggle="tab" href="#color4">
-                           <span style="display: inline-block; background-color: #DDA572; width: 40px; height: 40px; border-radius: 70%; margin-right: 15px;"></span>
-                        </a></li>
-                  
-                      </ul>
-                      
-                      <div class="tab-content">
-                        <div id="color1" class="tab-pane fade in active">
-                            <div class="avatares">
-                              <img src="/avatares/rostros/blanco/1.png">
-                              <img src="/avatares/rostros/blanco/2.png">
-                              <img src="/avatares/rostros/blanco/3.png">
-                              <img src="/avatares/rostros/blanco/4.png">
-                              <img src="/avatares/rostros/blanco/5.png">
-                              <img src="/avatares/rostros/blanco/6.png">
-                              <img src="/avatares/rostros/blanco/7.png">
-                              <img src="/avatares/rostros/blanco/8.png">
-                              <img src="/avatares/rostros/blanco/9.png">
-                            </div>
-                        </div>
-                        <div id="color2" class="tab-pane fade">
-                            <div class="avatares">
-                              <img src="/avatares/rostros/moreno/1.png">
-                              <img src="/avatares/rostros/moreno/2.png">
-                              <img src="/avatares/rostros/moreno/3.png">
-                              <img src="/avatares/rostros/moreno/4.png">
-                              <img src="/avatares/rostros/moreno/5.png">
-                              <img src="/avatares/rostros/moreno/6.png">
-                              <img src="/avatares/rostros/moreno/7.png">
-                              <img src="/avatares/rostros/moreno/8.png">
-                              <img src="/avatares/rostros/moreno/9.png">
-                            </div>
-                        </div>
-                        <div id="color3" class="tab-pane fade">
-                            <div class="avatares">
-                              <img src="/avatares/rostros/negro/1.png">
-                              <img src="/avatares/rostros/negro/2.png">
-                              <img src="/avatares/rostros/negro/3.png">
-                              <img src="/avatares/rostros/negro/4.png">
-                              <img src="/avatares/rostros/negro/5.png">
-                              <img src="/avatares/rostros/negro/6.png">
-                              <img src="/avatares/rostros/negro/7.png">
-                              <img src="/avatares/rostros/negro/8.png">
-                              <img src="/avatares/rostros/negro/9.png">
-                            </div>
-                        </div>
-                        <div id="color4" class="tab-pane fade">
-                            <div class="avatares">
-                              <img src="/avatares/rostros/trigueno/1.png">
-                              <img src="/avatares/rostros/trigueno/2.png">
-                              <img src="/avatares/rostros/trigueno/3.png">
-                              <img src="/avatares/rostros/trigueno/4.png">
-                              <img src="/avatares/rostros/trigueno/5.png">
-                              <img src="/avatares/rostros/trigueno/6.png">
-                              <img src="/avatares/rostros/trigueno/7.png">
-                              <img src="/avatares/rostros/trigueno/8.png">
-                              <img src="/avatares/rostros/trigueno/9.png">
-                            </div>
-                        </div>
-                      </div>
+
+                    <div class="avatares">
+                      <img src="/avatares/a/narices/{{tipo}}/1.png" class="narices">
+                      <img src="/avatares/a/narices/{{tipo}}/2.png" class="narices">
+                      <img src="/avatares/a/narices/{{tipo}}/3.png" class="narices">
+                      <img src="/avatares/a/narices/{{tipo}}/4.png" class="narices">
+                      <img src="/avatares/a/narices/{{tipo}}/5.png" class="narices">
+                      <img src="/avatares/a/narices/{{tipo}}/6.png" class="narices">
+                      <img src="/avatares/a/narices/{{tipo}}/7.png" class="narices">
+                      <img src="/avatares/a/narices/{{tipo}}/8.png" class="narices">
+                      <img src="/avatares/a/narices/{{tipo}}/9.png" class="narices">
+                    </div>
+
                   </div>
                   <div id="menu6" class="tab-pane fade">
-                    <ul class="nav nav-tabs">
-                        <li class="active"><a data-toggle="tab" href="#color1">
-                          <span style="display: inline-block; background-color: #F7D8C4; width: 40px; height: 40px; border-radius: 70%;margin-right: 15px; margin-left: 15px;"></span>
-                        </a></li>
-                        <li><a data-toggle="tab" href="#color2">
-                           <span style="display: inline-block; background-color: #BF7965; width: 40px; height: 40px; border-radius: 70%;margin-right: 15px;"></span>
-                        </a></li>
-                        
-                        <li><a data-toggle="tab" href="#color3">
-                           <span style="display: inline-block; background-color: #864B25; width: 40px; height: 40px; border-radius: 70%;margin-right: 15px;"></span>
-                        </a></li>
-                        <li><a data-toggle="tab" href="#color4">
-                           <span style="display: inline-block; background-color: #DDA572; width: 40px; height: 40px; border-radius: 70%; margin-right: 15px;"></span>
-                        </a></li>
-                  
-                      </ul>
-                      
-                      <div class="tab-content">
-                        <div id="color1" class="tab-pane fade in active">
-                            <div class="avatares">
-                              <img src="/avatares/rostros/blanco/1.png">
-                              <img src="/avatares/rostros/blanco/2.png">
-                              <img src="/avatares/rostros/blanco/3.png">
-                              <img src="/avatares/rostros/blanco/4.png">
-                              <img src="/avatares/rostros/blanco/5.png">
-                              <img src="/avatares/rostros/blanco/6.png">
-                              <img src="/avatares/rostros/blanco/7.png">
-                              <img src="/avatares/rostros/blanco/8.png">
-                              <img src="/avatares/rostros/blanco/9.png">
-                            </div>
-                        </div>
-                        <div id="color2" class="tab-pane fade">
-                            <div class="avatares">
-                              <img src="/avatares/rostros/moreno/1.png">
-                              <img src="/avatares/rostros/moreno/2.png">
-                              <img src="/avatares/rostros/moreno/3.png">
-                              <img src="/avatares/rostros/moreno/4.png">
-                              <img src="/avatares/rostros/moreno/5.png">
-                              <img src="/avatares/rostros/moreno/6.png">
-                              <img src="/avatares/rostros/moreno/7.png">
-                              <img src="/avatares/rostros/moreno/8.png">
-                              <img src="/avatares/rostros/moreno/9.png">
-                            </div>
-                        </div>
-                        <div id="color3" class="tab-pane fade">
-                            <div class="avatares">
-                              <img src="/avatares/rostros/negro/1.png">
-                              <img src="/avatares/rostros/negro/2.png">
-                              <img src="/avatares/rostros/negro/3.png">
-                              <img src="/avatares/rostros/negro/4.png">
-                              <img src="/avatares/rostros/negro/5.png">
-                              <img src="/avatares/rostros/negro/6.png">
-                              <img src="/avatares/rostros/negro/7.png">
-                              <img src="/avatares/rostros/negro/8.png">
-                              <img src="/avatares/rostros/negro/9.png">
-                            </div>
-                        </div>
-                        <div id="color4" class="tab-pane fade">
-                            <div class="avatares">
-                              <img src="/avatares/rostros/trigueno/1.png">
-                              <img src="/avatares/rostros/trigueno/2.png">
-                              <img src="/avatares/rostros/trigueno/3.png">
-                              <img src="/avatares/rostros/trigueno/4.png">
-                              <img src="/avatares/rostros/trigueno/5.png">
-                              <img src="/avatares/rostros/trigueno/6.png">
-                              <img src="/avatares/rostros/trigueno/7.png">
-                              <img src="/avatares/rostros/trigueno/8.png">
-                              <img src="/avatares/rostros/trigueno/9.png">
-                            </div>
-                        </div>
-                      </div>
+                    <div class="avatares">
+                      <img src="/avatares/a/bocas/{{tipo}}/1.png" class="bocas">
+                      <img src="/avatares/a/bocas/{{tipo}}/2.png" class="bocas">
+                      <img src="/avatares/a/bocas/{{tipo}}/3.png" class="bocas">
+                      <img src="/avatares/a/bocas/{{tipo}}/4.png" class="bocas">
+                      <img src="/avatares/a/bocas/{{tipo}}/5.png" class="bocas">
+                      <img src="/avatares/a/bocas/{{tipo}}/6.png" class="bocas">
+                      <img src="/avatares/a/bocas/{{tipo}}/7.png" class="bocas">
+                      <img src="/avatares/a/bocas/{{tipo}}/8.png" class="bocas">
+                      <img src="/avatares/a/bocas/{{tipo}}/9.png" class="bocas">
+                    </div>
                   </div>
                   <div id="menu7" class="tab-pane fade">
-                    <ul class="nav nav-tabs">
-                        <li class="active"><a data-toggle="tab" href="#color1">
-                          <span style="display: inline-block; background-color: #F7D8C4; width: 40px; height: 40px; border-radius: 70%;margin-right: 15px; margin-left: 15px;"></span>
-                        </a></li>
-                        <li><a data-toggle="tab" href="#color2">
-                           <span style="display: inline-block; background-color: #BF7965; width: 40px; height: 40px; border-radius: 70%;margin-right: 15px;"></span>
-                        </a></li>
-                        
-                        <li><a data-toggle="tab" href="#color3">
-                           <span style="display: inline-block; background-color: #864B25; width: 40px; height: 40px; border-radius: 70%;margin-right: 15px;"></span>
-                        </a></li>
-                        <li><a data-toggle="tab" href="#color4">
-                           <span style="display: inline-block; background-color: #DDA572; width: 40px; height: 40px; border-radius: 70%; margin-right: 15px;"></span>
-                        </a></li>
-                  
-                      </ul>
-                      
-                      <div class="tab-content">
-                        <div id="color1" class="tab-pane fade in active">
-                            <div class="avatares">
-                              <img src="/avatares/rostros/blanco/1.png">
-                              <img src="/avatares/rostros/blanco/2.png">
-                              <img src="/avatares/rostros/blanco/3.png">
-                              <img src="/avatares/rostros/blanco/4.png">
-                              <img src="/avatares/rostros/blanco/5.png">
-                              <img src="/avatares/rostros/blanco/6.png">
-                              <img src="/avatares/rostros/blanco/7.png">
-                              <img src="/avatares/rostros/blanco/8.png">
-                              <img src="/avatares/rostros/blanco/9.png">
-                            </div>
-                        </div>
-                        <div id="color2" class="tab-pane fade">
-                            <div class="avatares">
-                              <img src="/avatares/rostros/moreno/1.png">
-                              <img src="/avatares/rostros/moreno/2.png">
-                              <img src="/avatares/rostros/moreno/3.png">
-                              <img src="/avatares/rostros/moreno/4.png">
-                              <img src="/avatares/rostros/moreno/5.png">
-                              <img src="/avatares/rostros/moreno/6.png">
-                              <img src="/avatares/rostros/moreno/7.png">
-                              <img src="/avatares/rostros/moreno/8.png">
-                              <img src="/avatares/rostros/moreno/9.png">
-                            </div>
-                        </div>
-                        <div id="color3" class="tab-pane fade">
-                            <div class="avatares">
-                              <img src="/avatares/rostros/negro/1.png">
-                              <img src="/avatares/rostros/negro/2.png">
-                              <img src="/avatares/rostros/negro/3.png">
-                              <img src="/avatares/rostros/negro/4.png">
-                              <img src="/avatares/rostros/negro/5.png">
-                              <img src="/avatares/rostros/negro/6.png">
-                              <img src="/avatares/rostros/negro/7.png">
-                              <img src="/avatares/rostros/negro/8.png">
-                              <img src="/avatares/rostros/negro/9.png">
-                            </div>
-                        </div>
-                        <div id="color4" class="tab-pane fade">
-                            <div class="avatares">
-                              <img src="/avatares/rostros/trigueno/1.png">
-                              <img src="/avatares/rostros/trigueno/2.png">
-                              <img src="/avatares/rostros/trigueno/3.png">
-                              <img src="/avatares/rostros/trigueno/4.png">
-                              <img src="/avatares/rostros/trigueno/5.png">
-                              <img src="/avatares/rostros/trigueno/6.png">
-                              <img src="/avatares/rostros/trigueno/7.png">
-                              <img src="/avatares/rostros/trigueno/8.png">
-                              <img src="/avatares/rostros/trigueno/9.png">
-                            </div>
-                        </div>
-                      </div>
+                    <div class="avatares">
+                      <img src="/avatares/a/barba/1.png" class="barba">
+                      <img src="/avatares/a/barba/2.png" class="barba">
+                      <img src="/avatares/a/barba/3.png" class="barba">
+                      <img src="/avatares/a/barba/4.png" class="barba">
+                      <img src="/avatares/a/barba/5.png" class="barba">
+                      <img src="/avatares/a/barba/6.png" class="barba">
+                      <img src="/avatares/a/barba/7.png" class="barba">
+                      <img src="/avatares/a/barba/8.png" class="barba">
+                      <img src="/avatares/a/barba/9.png" class="barba">
+                    </div>
                   </div>
                   <div id="menu8" class="tab-pane fade">
-                    <ul class="nav nav-tabs">
-                        <li class="active"><a data-toggle="tab" href="#color1">
-                          <span style="display: inline-block; background-color: #F7D8C4; width: 40px; height: 40px; border-radius: 70%;margin-right: 15px; margin-left: 15px;"></span>
-                        </a></li>
-                        <li><a data-toggle="tab" href="#color2">
-                           <span style="display: inline-block; background-color: #BF7965; width: 40px; height: 40px; border-radius: 70%;margin-right: 15px;"></span>
-                        </a></li>
-                        
-                        <li><a data-toggle="tab" href="#color3">
-                           <span style="display: inline-block; background-color: #864B25; width: 40px; height: 40px; border-radius: 70%;margin-right: 15px;"></span>
-                        </a></li>
-                        <li><a data-toggle="tab" href="#color4">
-                           <span style="display: inline-block; background-color: #DDA572; width: 40px; height: 40px; border-radius: 70%; margin-right: 15px;"></span>
-                        </a></li>
-                  
-                      </ul>
-                      
-                      <div class="tab-content">
-                        <div id="color1" class="tab-pane fade in active">
-                            <div class="avatares">
-                              <img src="/avatares/rostros/blanco/1.png">
-                              <img src="/avatares/rostros/blanco/2.png">
-                              <img src="/avatares/rostros/blanco/3.png">
-                              <img src="/avatares/rostros/blanco/4.png">
-                              <img src="/avatares/rostros/blanco/5.png">
-                              <img src="/avatares/rostros/blanco/6.png">
-                              <img src="/avatares/rostros/blanco/7.png">
-                              <img src="/avatares/rostros/blanco/8.png">
-                              <img src="/avatares/rostros/blanco/9.png">
-                            </div>
-                        </div>
-                        <div id="color2" class="tab-pane fade">
-                            <div class="avatares">
-                              <img src="/avatares/rostros/moreno/1.png">
-                              <img src="/avatares/rostros/moreno/2.png">
-                              <img src="/avatares/rostros/moreno/3.png">
-                              <img src="/avatares/rostros/moreno/4.png">
-                              <img src="/avatares/rostros/moreno/5.png">
-                              <img src="/avatares/rostros/moreno/6.png">
-                              <img src="/avatares/rostros/moreno/7.png">
-                              <img src="/avatares/rostros/moreno/8.png">
-                              <img src="/avatares/rostros/moreno/9.png">
-                            </div>
-                        </div>
-                        <div id="color3" class="tab-pane fade">
-                            <div class="avatares">
-                              <img src="/avatares/rostros/negro/1.png">
-                              <img src="/avatares/rostros/negro/2.png">
-                              <img src="/avatares/rostros/negro/3.png">
-                              <img src="/avatares/rostros/negro/4.png">
-                              <img src="/avatares/rostros/negro/5.png">
-                              <img src="/avatares/rostros/negro/6.png">
-                              <img src="/avatares/rostros/negro/7.png">
-                              <img src="/avatares/rostros/negro/8.png">
-                              <img src="/avatares/rostros/negro/9.png">
-                            </div>
-                        </div>
-                        <div id="color4" class="tab-pane fade">
-                            <div class="avatares">
-                              <img src="/avatares/rostros/trigueno/1.png">
-                              <img src="/avatares/rostros/trigueno/2.png">
-                              <img src="/avatares/rostros/trigueno/3.png">
-                              <img src="/avatares/rostros/trigueno/4.png">
-                              <img src="/avatares/rostros/trigueno/5.png">
-                              <img src="/avatares/rostros/trigueno/6.png">
-                              <img src="/avatares/rostros/trigueno/7.png">
-                              <img src="/avatares/rostros/trigueno/8.png">
-                              <img src="/avatares/rostros/trigueno/9.png">
-                            </div>
-                        </div>
-                      </div>
+
+                    <div class="avatares">
+                      <img src="/avatares/a/bigotes/1.png" class="bigotes">
+                      <img src="/avatares/a/bigotes/2.png" class="bigotes">
+                      <img src="/avatares/a/bigotes/3.png" class="bigotes">
+                      <img src="/avatares/a/bigotes/4.png" class="bigotes">
+                      <img src="/avatares/a/bigotes/5.png" class="bigotes">
+                      <img src="/avatares/a/bigotes/6.png" class="bigotes">
+                      <img src="/avatares/a/bigotes/7.png" class="bigotes">
+                      <img src="/avatares/a/bigotes/8.png" class="bigotes">
+                      <img src="/avatares/a/bigotes/9.png" class="bigotes">
+                    </div>
+
                   </div>
                   <div id="menu9" class="tab-pane fade">
                     <ul class="nav nav-tabs">
-                        <li class="active"><a data-toggle="tab" href="#color1">
-                          <span style="display: inline-block; background-color: #F7D8C4; width: 40px; height: 40px; border-radius: 70%;margin-right: 15px; margin-left: 15px;"></span>
+                        <li class="active"><a data-toggle="tab" href="#colorr1">
+                          <span style="display: inline-block; background-color: yellow; width: 40px; height: 40px; border-radius: 70%;margin-right: 15px; margin-left: 15px;"></span>
                         </a></li>
-                        <li><a data-toggle="tab" href="#color2">
-                           <span style="display: inline-block; background-color: #BF7965; width: 40px; height: 40px; border-radius: 70%;margin-right: 15px;"></span>
+                        <li><a data-toggle="tab" href="#colorr2">
+                           <span style="display: inline-block; background-color: blue; width: 40px; height: 40px; border-radius: 70%;margin-right: 15px;"></span>
                         </a></li>
-                        
-                        <li><a data-toggle="tab" href="#color3">
-                           <span style="display: inline-block; background-color: #864B25; width: 40px; height: 40px; border-radius: 70%;margin-right: 15px;"></span>
+
+                        <li><a data-toggle="tab" href="#colorr3">
+                           <span style="display: inline-block; background-color: black; width: 40px; height: 40px; border-radius: 70%;margin-right: 15px;"></span>
                         </a></li>
-                        <li><a data-toggle="tab" href="#color4">
-                           <span style="display: inline-block; background-color: #DDA572; width: 40px; height: 40px; border-radius: 70%; margin-right: 15px;"></span>
+                        <li><a data-toggle="tab" href="#colorr4">
+                           <span style="display: inline-block; background-color: red; width: 40px; height: 40px; border-radius: 70%; margin-right: 15px;"></span>
                         </a></li>
-                  
+
                       </ul>
-                      
+
                       <div class="tab-content">
-                        <div id="color1" class="tab-pane fade in active">
+                        <div id="colorr1" class="tab-pane fade in active">
                             <div class="avatares">
-                              <img src="/avatares/rostros/blanco/1.png">
-                              <img src="/avatares/rostros/blanco/2.png">
-                              <img src="/avatares/rostros/blanco/3.png">
-                              <img src="/avatares/rostros/blanco/4.png">
-                              <img src="/avatares/rostros/blanco/5.png">
-                              <img src="/avatares/rostros/blanco/6.png">
-                              <img src="/avatares/rostros/blanco/7.png">
-                              <img src="/avatares/rostros/blanco/8.png">
-                              <img src="/avatares/rostros/blanco/9.png">
+                              <img src="/avatares/a/ropa/{{tipo}}/amarillo/1.png" class="ropa">
+                              {{#if esMujer}}
+                              <img src="/avatares/a/ropa/{{tipo}}/amarillo/2.png" class="ropa">
+                              {{/if}}
+                              <img src="/avatares/a/ropa/{{tipo}}/amarillo/3.png" class="ropa">
+                              <img src="/avatares/a/ropa/{{tipo}}/amarillo/4.png" class="ropa">
+                              <img src="/avatares/a/ropa/{{tipo}}/amarillo/5.png" class="ropa">
+                              <img src="/avatares/a/ropa/{{tipo}}/amarillo/6.png" class="ropa">
+                              <img src="/avatares/a/ropa/{{tipo}}/amarillo/7.png" class="ropa">
+                              <img src="/avatares/a/ropa/{{tipo}}/amarillo/8.png" class="ropa">
+                              <img src="/avatares/a/ropa/{{tipo}}/amarillo/9.png" class="ropa">
                             </div>
                         </div>
-                        <div id="color2" class="tab-pane fade">
+                        <div id="colorr2" class="tab-pane fade">
                             <div class="avatares">
-                              <img src="/avatares/rostros/moreno/1.png">
-                              <img src="/avatares/rostros/moreno/2.png">
-                              <img src="/avatares/rostros/moreno/3.png">
-                              <img src="/avatares/rostros/moreno/4.png">
-                              <img src="/avatares/rostros/moreno/5.png">
-                              <img src="/avatares/rostros/moreno/6.png">
-                              <img src="/avatares/rostros/moreno/7.png">
-                              <img src="/avatares/rostros/moreno/8.png">
-                              <img src="/avatares/rostros/moreno/9.png">
+                              <img src="/avatares/a/ropa/{{tipo}}/azul/1.png" class="ropa">
+                              {{#if esMujer}}
+                              <img src="/avatares/a/ropa/{{tipo}}/azul/2.png" class="ropa">
+                              {{/if}}
+                              <img src="/avatares/a/ropa/{{tipo}}/azul/3.png" class="ropa">
+                              <img src="/avatares/a/ropa/{{tipo}}/azul/4.png" class="ropa">
+                              <img src="/avatares/a/ropa/{{tipo}}/azul/5.png" class="ropa">
+                              <img src="/avatares/a/ropa/{{tipo}}/azul/6.png" class="ropa">
+                              <img src="/avatares/a/ropa/{{tipo}}/azul/7.png" class="ropa">
+                              <img src="/avatares/a/ropa/{{tipo}}/azul/8.png" class="ropa">
+                              <img src="/avatares/a/ropa/{{tipo}}/azul/9.png" class="ropa">
                             </div>
                         </div>
-                        <div id="color3" class="tab-pane fade">
+                        <div id="colorr3" class="tab-pane fade">
                             <div class="avatares">
-                              <img src="/avatares/rostros/negro/1.png">
-                              <img src="/avatares/rostros/negro/2.png">
-                              <img src="/avatares/rostros/negro/3.png">
-                              <img src="/avatares/rostros/negro/4.png">
-                              <img src="/avatares/rostros/negro/5.png">
-                              <img src="/avatares/rostros/negro/6.png">
-                              <img src="/avatares/rostros/negro/7.png">
-                              <img src="/avatares/rostros/negro/8.png">
-                              <img src="/avatares/rostros/negro/9.png">
+                              <img src="/avatares/a/ropa/{{tipo}}/negro/1.png">
+                              {{#if esMujer}}
+                              <img src="/avatares/a/ropa/{{tipo}}/negro/2.png">
+                              {{/if}}
+                              <img src="/avatares/a/ropa/{{tipo}}/negro/3.png" class="ropa">
+                              <img src="/avatares/a/ropa/{{tipo}}/negro/4.png" class="ropa">
+                              <img src="/avatares/a/ropa/{{tipo}}/negro/5.png" class="ropa">
+                              <img src="/avatares/a/ropa/{{tipo}}/negro/6.png" class="ropa">
+                              <img src="/avatares/a/ropa/{{tipo}}/negro/7.png" class="ropa">
+                              <img src="/avatares/a/ropa/{{tipo}}/negro/8.png" class="ropa">
+                              <img src="/avatares/a/ropa/{{tipo}}/negro/9.png" class="ropa">
                             </div>
                         </div>
-                        <div id="color4" class="tab-pane fade">
+                        <div id="colorr4" class="tab-pane fade">
                             <div class="avatares">
-                              <img src="/avatares/rostros/trigueno/1.png">
-                              <img src="/avatares/rostros/trigueno/2.png">
-                              <img src="/avatares/rostros/trigueno/3.png">
-                              <img src="/avatares/rostros/trigueno/4.png">
-                              <img src="/avatares/rostros/trigueno/5.png">
-                              <img src="/avatares/rostros/trigueno/6.png">
-                              <img src="/avatares/rostros/trigueno/7.png">
-                              <img src="/avatares/rostros/trigueno/8.png">
-                              <img src="/avatares/rostros/trigueno/9.png">
+                              <img src="/avatares/a/ropa/{{tipo}}/rojo/1.png" class="ropa">
+                              {{#if esMujer}}
+                              <img src="/avatares/a/ropa/{{tipo}}/rojo/2.png" class="ropa">
+                              {{/if}}
+                              <img src="/avatares/a/ropa/{{tipo}}/rojo/3.png" class="ropa">
+                              <img src="/avatares/a/ropa/{{tipo}}/rojo/4.png" class="ropa">
+                              <img src="/avatares/a/ropa/{{tipo}}/rojo/5.png" class="ropa">
+                              <img src="/avatares/a/ropa/{{tipo}}/rojo/6.png" class="ropa">
+                              <img src="/avatares/a/ropa/{{tipo}}/rojo/7.png" class="ropa">
+                              <img src="/avatares/a/ropa/{{tipo}}/rojo/8.png" class="ropa">
+                              <img src="/avatares/a/ropa/{{tipo}}/rojo/9.png" class="ropa">
                             </div>
+
                         </div>
                       </div>
                   </div>
                   <div id="menu10" class="tab-pane fade">
-                    <ul class="nav nav-tabs">
-                        <li class="active"><a data-toggle="tab" href="#color1">
-                          <span style="display: inline-block; background-color: #F7D8C4; width: 40px; height: 40px; border-radius: 70%;margin-right: 15px; margin-left: 15px;"></span>
-                        </a></li>
-                        <li><a data-toggle="tab" href="#color2">
-                           <span style="display: inline-block; background-color: #BF7965; width: 40px; height: 40px; border-radius: 70%;margin-right: 15px;"></span>
-                        </a></li>
-                        
-                        <li><a data-toggle="tab" href="#color3">
-                           <span style="display: inline-block; background-color: #864B25; width: 40px; height: 40px; border-radius: 70%;margin-right: 15px;"></span>
-                        </a></li>
-                        <li><a data-toggle="tab" href="#color4">
-                           <span style="display: inline-block; background-color: #DDA572; width: 40px; height: 40px; border-radius: 70%; margin-right: 15px;"></span>
-                        </a></li>
-                  
-                      </ul>
-                      
-                      <div class="tab-content">
-                        <div id="color1" class="tab-pane fade in active">
-                            <div class="avatares">
-                              <img src="/avatares/rostros/blanco/1.png">
-                              <img src="/avatares/rostros/blanco/2.png">
-                              <img src="/avatares/rostros/blanco/3.png">
-                              <img src="/avatares/rostros/blanco/4.png">
-                              <img src="/avatares/rostros/blanco/5.png">
-                              <img src="/avatares/rostros/blanco/6.png">
-                              <img src="/avatares/rostros/blanco/7.png">
-                              <img src="/avatares/rostros/blanco/8.png">
-                              <img src="/avatares/rostros/blanco/9.png">
-                            </div>
-                        </div>
-                        <div id="color2" class="tab-pane fade">
-                            <div class="avatares">
-                              <img src="/avatares/rostros/moreno/1.png">
-                              <img src="/avatares/rostros/moreno/2.png">
-                              <img src="/avatares/rostros/moreno/3.png">
-                              <img src="/avatares/rostros/moreno/4.png">
-                              <img src="/avatares/rostros/moreno/5.png">
-                              <img src="/avatares/rostros/moreno/6.png">
-                              <img src="/avatares/rostros/moreno/7.png">
-                              <img src="/avatares/rostros/moreno/8.png">
-                              <img src="/avatares/rostros/moreno/9.png">
-                            </div>
-                        </div>
-                        <div id="color3" class="tab-pane fade">
-                            <div class="avatares">
-                              <img src="/avatares/rostros/negro/1.png">
-                              <img src="/avatares/rostros/negro/2.png">
-                              <img src="/avatares/rostros/negro/3.png">
-                              <img src="/avatares/rostros/negro/4.png">
-                              <img src="/avatares/rostros/negro/5.png">
-                              <img src="/avatares/rostros/negro/6.png">
-                              <img src="/avatares/rostros/negro/7.png">
-                              <img src="/avatares/rostros/negro/8.png">
-                              <img src="/avatares/rostros/negro/9.png">
-                            </div>
-                        </div>
-                        <div id="color4" class="tab-pane fade">
-                            <div class="avatares">
-                              <img src="/avatares/rostros/trigueno/1.png">
-                              <img src="/avatares/rostros/trigueno/2.png">
-                              <img src="/avatares/rostros/trigueno/3.png">
-                              <img src="/avatares/rostros/trigueno/4.png">
-                              <img src="/avatares/rostros/trigueno/5.png">
-                              <img src="/avatares/rostros/trigueno/6.png">
-                              <img src="/avatares/rostros/trigueno/7.png">
-                              <img src="/avatares/rostros/trigueno/8.png">
-                              <img src="/avatares/rostros/trigueno/9.png">
-                            </div>
-                        </div>
-                      </div>
+
+                    <div class="avatares">
+                      <img src="/avatares/a/fondos/1.png" class="fondos">
+                      <img src="/avatares/a/fondos/2.png" class="fondos">
+                      <img src="/avatares/a/fondos/3.png" class="fondos">
+                      <img src="/avatares/a/fondos/4.png" class="fondos">
+                      <img src="/avatares/a/fondos/5.png" class="fondos">
+                      <img src="/avatares/a/fondos/6.png" class="fondos">
+                      <img src="/avatares/a/fondos/7.png" class="fondos">
+                      <img src="/avatares/a/fondos/8.png" class="fondos">
+                      <img src="/avatares/a/fondos/9.png" class="fondos">
+                    </div>
+
+
+
                   </div>
                   <div id="menu11" class="tab-pane fade">
                     <ul class="nav nav-tabs">
-                        <li class="active"><a data-toggle="tab" href="#color1">
-                          <span style="display: inline-block; background-color: #F7D8C4; width: 40px; height: 40px; border-radius: 70%;margin-right: 15px; margin-left: 15px;"></span>
+                        <li class="active"><a data-toggle="tab" href="#colorac1">
+                          <span style="display: inline-block; background-color: blue; width: 40px; height: 40px; border-radius: 70%;margin-right: 15px; margin-left: 15px;"></span>
                         </a></li>
-                        <li><a data-toggle="tab" href="#color2">
-                           <span style="display: inline-block; background-color: #BF7965; width: 40px; height: 40px; border-radius: 70%;margin-right: 15px;"></span>
+                        {{#if esHombre}}
+                        <li><a data-toggle="tab" href="#colorac2">
+                           <span style="display: inline-block; background-color: white; width: 40px; height: 40px; border-radius: 70%;margin-right: 15px;"></span>
                         </a></li>
-                        
-                        <li><a data-toggle="tab" href="#color3">
-                           <span style="display: inline-block; background-color: #864B25; width: 40px; height: 40px; border-radius: 70%;margin-right: 15px;"></span>
+
+                        <li><a data-toggle="tab" href="#colorac3">
+                           <span style="display: inline-block; background-color: brown; width: 40px; height: 40px; border-radius: 70%;margin-right: 15px;"></span>
                         </a></li>
-                        <li><a data-toggle="tab" href="#color4">
-                           <span style="display: inline-block; background-color: #DDA572; width: 40px; height: 40px; border-radius: 70%; margin-right: 15px;"></span>
+                        <li><a data-toggle="tab" href="#colorac4">
+                           <span style="display: inline-block; background-color: black; width: 40px; height: 40px; border-radius: 70%; margin-right: 15px;"></span>
                         </a></li>
-                  
+                        {{/if}}
+                        <li><a data-toggle="tab" href="#colorac5">
+                           <span style="display: inline-block; background-color: green; width: 40px; height: 40px; border-radius: 70%; margin-right: 15px;"></span>
+                        </a></li>
                       </ul>
-                      
+
                       <div class="tab-content">
-                        <div id="color1" class="tab-pane fade in active">
+                        <div id="colorac1" class="tab-pane fade in active">
                             <div class="avatares">
-                              <img src="/avatares/rostros/blanco/1.png">
-                              <img src="/avatares/rostros/blanco/2.png">
-                              <img src="/avatares/rostros/blanco/3.png">
-                              <img src="/avatares/rostros/blanco/4.png">
-                              <img src="/avatares/rostros/blanco/5.png">
-                              <img src="/avatares/rostros/blanco/6.png">
-                              <img src="/avatares/rostros/blanco/7.png">
-                              <img src="/avatares/rostros/blanco/8.png">
-                              <img src="/avatares/rostros/blanco/9.png">
+                              <img src="/avatares/a/accesorios/{{tipo}}/azul/1.png" class="accesorios">
+                              <img src="/avatares/a/accesorios/{{tipo}}/azul/2.png" class="accesorios">
+                              <img src="/avatares/a/accesorios/{{tipo}}/azul/3.png" class="accesorios">
+
                             </div>
                         </div>
-                        <div id="color2" class="tab-pane fade">
+                        {{#if esHombre}}
+                        <div id="colorac2" class="tab-pane fade">
                             <div class="avatares">
-                              <img src="/avatares/rostros/moreno/1.png">
-                              <img src="/avatares/rostros/moreno/2.png">
-                              <img src="/avatares/rostros/moreno/3.png">
-                              <img src="/avatares/rostros/moreno/4.png">
-                              <img src="/avatares/rostros/moreno/5.png">
-                              <img src="/avatares/rostros/moreno/6.png">
-                              <img src="/avatares/rostros/moreno/7.png">
-                              <img src="/avatares/rostros/moreno/8.png">
-                              <img src="/avatares/rostros/moreno/9.png">
+                              <img src="/avatares/a/accesorios/{{tipo}}/blanco/1.png" class="accesorios">
+                              <img src="/avatares/a/accesorios/{{tipo}}/blanco/2.png" class="accesorios">
+                              <img src="/avatares/a/accesorios/{{tipo}}/blanco/3.png" class="accesorios">
+
                             </div>
                         </div>
-                        <div id="color3" class="tab-pane fade">
+                        <div id="colorac3" class="tab-pane fade">
                             <div class="avatares">
-                              <img src="/avatares/rostros/negro/1.png">
-                              <img src="/avatares/rostros/negro/2.png">
-                              <img src="/avatares/rostros/negro/3.png">
-                              <img src="/avatares/rostros/negro/4.png">
-                              <img src="/avatares/rostros/negro/5.png">
-                              <img src="/avatares/rostros/negro/6.png">
-                              <img src="/avatares/rostros/negro/7.png">
-                              <img src="/avatares/rostros/negro/8.png">
-                              <img src="/avatares/rostros/negro/9.png">
+                              <img src="/avatares/a/accesorios/{{tipo}}/marron/1.png" class="accesorios">
+                              <img src="/avatares/a/accesorios/{{tipo}}/marron/2.png" class="accesorios">
+                              <img src="/avatares/a/accesorios/{{tipo}}/marron/3.png" class="accesorios">
+
                             </div>
                         </div>
-                        <div id="color4" class="tab-pane fade">
+                        <div id="colorac4" class="tab-pane fade">
                             <div class="avatares">
-                              <img src="/avatares/rostros/trigueno/1.png">
-                              <img src="/avatares/rostros/trigueno/2.png">
-                              <img src="/avatares/rostros/trigueno/3.png">
-                              <img src="/avatares/rostros/trigueno/4.png">
-                              <img src="/avatares/rostros/trigueno/5.png">
-                              <img src="/avatares/rostros/trigueno/6.png">
-                              <img src="/avatares/rostros/trigueno/7.png">
-                              <img src="/avatares/rostros/trigueno/8.png">
-                              <img src="/avatares/rostros/trigueno/9.png">
+                              <img src="/avatares/a/accesorios/{{tipo}}/negro/1.png" class="accesorios">
+                              <img src="/avatares/a/accesorios/{{tipo}}/negro/2.png" class="accesorios">
+                              <img src="/avatares/a/accesorios/{{tipo}}/negro/3.png" class="accesorios">
+
+                            </div>
+                        </div>
+                        {{/if}}
+                        <div id="colorac5" class="tab-pane fade">
+                            <div class="avatares">
+                              {{#if esMujer}}
+                              <img src="/avatares/a/accesorios/{{tipo}}/verde/1.png" class="accesorios">
+                              {{/if}}
+                              <img src="/avatares/a/accesorios/{{tipo}}/verde/2.png" class="accesorios">
+                              <img src="/avatares/a/accesorios/{{tipo}}/verde/3.png" class="accesorios">
+
                             </div>
                         </div>
                       </div>
