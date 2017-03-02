@@ -89,7 +89,7 @@ Template.avatar.onRendered( () => {
   template.nariz.onload = function() {
       resourceLoaded();
   }
-  template.nariz.src = '/avatares/a/narices/' + genero + '/1.png'
+  template.nariz.src = '/avatares/a/narices/' + genero + '/6.png'
   template.boca = new Image()
   template.boca.onload = function() {
       resourceLoaded();

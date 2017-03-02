@@ -105,7 +105,7 @@
 // Fin de la funcion para convertir string con tildes a string normal
 
 
-function subirFoto (event, template) {
+function subirFoto (event, template, pubId) {
 
     let archivo = document.getElementById("myArchivo");
 
@@ -129,6 +129,7 @@ function subirFoto (event, template) {
 
             doc.metadata = {
               creadorId: Meteor.userId(),
+              pubId: pubId,
               privado: false
             };
 
@@ -186,6 +187,12 @@ Template.likes.helpers({
   }
 });
 
+Template.likes.events({
+  'click .ir'() {
+    Modal.hide('likes')
+  }
+})
+
 Template.amigosModal.helpers({
   amigos: function () {
     return Amigos.find({userId: FlowRouter.getParam('user')});
@@ -196,6 +203,26 @@ Template.amigosModal.helpers({
 });
 
 Template.perfil.events({
+  'click .eliminar-pub'() {
+    console.log(this._id);
+    Meteor.call('eliminarPublicacion', this._id, (err) => {
+      if (err) {
+        alert(err)
+      } else {
+        console.log('eliminado');
+      }
+    })
+  },
+  'click .eliminar-pub2'() {
+    console.log(this.metadata.pubId);
+    Meteor.call('eliminarPublicacion', this.metadata.pubId, (err) => {
+      if (err) {
+        alert(err)
+      } else {
+        console.log('eliminado');
+      }
+    })
+  },
   'click .postear': function (event, template) {
       event.preventDefault();
       var texto = template.find("[name='texto']").value;
@@ -249,7 +276,18 @@ Template.perfil.events({
   },
   'change #myArchivo': function (event, template) {
     event.preventDefault();
-    subirFoto(event, template);
+
+    var texto = '-';
+
+      Meteor.call('postear', texto, function (err, result) {
+          if (err) {
+            console.log('Hubo un error');
+          } else {
+            subirFoto(event, template, result);
+          }
+      });
+
+
   },
   'click .agregar-amigo': function (event, template) {
     let datos = {
@@ -313,6 +351,13 @@ Template.perfil.helpers({
   publicaciones: function () {
     return Muro.find({}, {sort: {createdAt: -1}});
   },
+  es() {
+    if (this.texto === '-') {
+      return false
+    } else {
+      return true
+    }
+  },
   avatar() {
     return Avatares.find({'metadata.userId': FlowRouter.getParam('user')})
   },
@@ -350,7 +395,7 @@ Template.perfil.helpers({
     return Meteor.users.findOne({_id: FlowRouter.getParam('user')});
   },
   fotos: function () {
-    return Fotos.find();
+    return Fotos.find({'metadata.pubId': this._id});
   },
   creador: function () {
     return Meteor.users.findOne({_id: this.metadata.creadorId}).username;

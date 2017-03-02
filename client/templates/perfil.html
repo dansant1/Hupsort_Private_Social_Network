@@ -116,10 +116,18 @@
 						</button>
 					</form>
 					{{/if}}
+
+					{{#each publicaciones}}
 					{{#each fotos}}
 					{{#if isImage}}
 					<div class="col-md-12" style="padding: 0;">
-						<div class="publicacion">
+						{{#if esMiMuro}}
+						<span class="eliminar-pub2" style="position: relative;
+    top: 50px;
+    left: 90%;
+    color: #95a5a6;"><i class="fa fa-times" aria-hidden="true"></i></span>
+		{{/if}}
+						<div class="publicacion" style="margin-bottom: 20px">
 							<a>{{creador}}</a>
 							<img src="{{this.url}}" alt="{{this.metadata.creadorId}}" style="min-width: 200px; min-height: 200px; max-width: 400px; max-height: 350px; box-shadow: inset 0px -1px 11px -2px rgba(0,0,0,0.75); border-radius: 4.5px; border: 1px solid #f1f1f1; display: block; ">
 							<br>
@@ -138,14 +146,18 @@
 						</div>
 					</div>
 
-
 						{{/if}}
 
 					{{/each}}
-					{{#each publicaciones}}
 					{{#if this.esYoutube}}
 					<div class="col-md-12" style="padding: 0;">
-					<div class="publicacion">
+						{{#if esMiMuro}}
+						<span class="eliminar-pub" style="position: relative;
+    top: 49px;
+    left: 90%;
+    color: #95a5a6;"><i class="fa fa-times" aria-hidden="true"></i></span>
+		{{/if}}
+					<div class="publicacion" style="margin-bottom: 20px">
 						<a>{{this.de.nombre}}</a>
           	<iframe width="560" height="349" src={{ytb}} frameborder="0" allowfullscreen >
           	</iframe>
@@ -162,27 +174,34 @@
 								<p><span style="color: #B24357">{{this.username}}: </span> {{comentario}}</p>
 							{{/each}}
 					</div>
+
 					</div>
 					{{else}}
+
 					<div class="col-md-12" style="padding: 0;">
-					<div class="publicacion">
-						<a>{{this.de.nombre}}</a>
-						<p>{{this.texto}}</p>
+						{{#if es}}
+						<div class="publicacion" style="margin-top: 20px;">
+							{{#if esMiMuro}}
+							<span class="eliminar-pub" style="position: relative; top: 41px; left: 90%; color: #95a5a6;"><i class="fa fa-times" aria-hidden="true"></i></span>
+							{{/if}}
+							<a>{{this.de.nombre}}</a>
+							<p>{{this.texto}}</p>
 
-						<span class="glyphicon likes glyphicon-heart like" style="color: {{corazon}}" aria-hidden="true"></span>
+							<span class="glyphicon likes glyphicon-heart like" style="color: {{corazon}}" aria-hidden="true"></span>
 
-						<span class="ver-likes">{{likes}}</span>
+							<span class="ver-likes">{{likes}}</span>
 
-						<form class="muro" style="margin: 0;">
-							<input type="text" style="margin-left: 0;" name="{{_id}}" placeholder="Comentar publicación...">
-						<button  id="comentar">
-							Comentar
-						</button>
-						</form>
-							{{#each comentarios}}
-								<p><span style="color: #B24357">{{this.username}}: </span> {{comentario}}</p>
-							{{/each}}
-					</div>
+							<form class="muro" style="margin: 0;">
+								<input type="text" style="margin-left: 0;" name="{{_id}}" placeholder="Comentar publicación...">
+							<button  id="comentar">
+								Comentar
+							</button>
+							</form>
+								{{#each comentarios}}
+									<p><span style="color: #B24357">{{this.username}}: </span> {{comentario}}</p>
+								{{/each}}
+						</div>
+						{{/if}}
 					</div>
 					{{/if}}
 					{{/each}}
@@ -199,6 +218,9 @@
 
                 <div class="modal-header">
                     <h4 class="modal-title">Amigos</h4>
+										<button style="padding: 3px; position: relative; top: -20px; right: -548px;" type="button" class="btn btn-default" data-dismiss="modal">
+											<i class="fa fa-times" aria-hidden="true"></i>
+										</button>
                 </div>
 
                 <div class="modal-body">
@@ -212,9 +234,7 @@
 					{{/each}}
                 </div>
 
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                </div>
+
 
             </div>
         </div>
@@ -227,7 +247,10 @@
             <div class="modal-content">
 
                 <div class="modal-header">
-                    <h4 class="modal-title">likes</h4>
+                    <h4 class="modal-title">Likes</h4>
+										<button style="padding: 3px; position: relative; top: -20px; right: -548px;" type="button" class="btn btn-default" data-dismiss="modal">
+											<i class="fa fa-times" aria-hidden="true"></i>
+										</button>
                 </div>
 
                 <div class="modal-body">
@@ -240,7 +263,7 @@
 											 	{{#each avatar}}
 												<img src="{{url}}" class="avatar">
 												{{/each}}
-											 {{this.de.nombre}}
+											 <a href="/m/{{this.de.id}}" class="ir">{{this.de.nombre}}</a>
 										 </td>
         						{{/each}}
 
@@ -250,9 +273,6 @@
   					</table>
                 </div>
 
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                </div>
 
             </div>
         </div>
@@ -264,9 +284,16 @@
         <div class="modal-dialog">
             <div class="modal-content">
 
-                <div class="modal-header">
-                    <h4 class="modal-title">Reportar</h4>
-                </div>
+
+
+										<div class="modal-header" style="padding-bottom: 2px;">
+												<h4 class="modal-title">Reportar</h4>
+
+												<button style="padding: 3px; position: relative; top: -20px; right: -548px;" type="button" class="btn btn-default" data-dismiss="modal">
+													<i class="fa fa-times" aria-hidden="true"></i>
+												</button>
+		                </div>
+
 
                 <div class="modal-body">
                    <form>
@@ -278,9 +305,7 @@
 					</form>
                 </div>
 
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                </div>
+
 
             </div>
         </div>

@@ -19,6 +19,10 @@ function validateYouTubeUrl(url)
 import { request } from "meteor/froatsnook:request";
 
 Meteor.methods({
+  eliminarPublicacion(id) {
+    check(id, String)
+    Muro.remove({_id: id})
+  },
   postear: function (texto) {
     check(texto, String);
 
@@ -41,9 +45,9 @@ Meteor.methods({
         datos.esYoutube = false;
       }
 
-      Muro.insert(datos);
+      let pubId = Muro.insert(datos);
 
-
+      return pubId;
 
     } else {
       return;

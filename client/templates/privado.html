@@ -28,6 +28,7 @@
   <div class="col-md-8">
     <div class="box-white">
      <div class="conversaciones">
+        <a href="/chat">CHATROOM</a>
         {{#each conversaciones}}
         <a href="/chatp/{{this.usuarioId}}" class="conversa">@{{username this.usuarioId}}</a>
         {{/each}}
@@ -68,7 +69,7 @@
   <div class="col-md-8">
     <div class="box-white">
       <div class="conversaciones">
-
+        <a href="/chat">CHATROOM</a>
         <a href="/chatp/{{this.usuarioId}}" style="border-right: none" class="conversa">@{{username}}</a>
 
       </div>

@@ -613,11 +613,28 @@ iframe {
 }
 
 .colorpicker.colorpicker-visible {
-	top: 479px !important;
+	top: 555px !important;
 }
 
-.mensaje p span  {
-	font-size: 16px;
+input.message::placeholder {
+  color: #95a5a6;
+}
+
+input.message::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #95a5a6;
+}
+input.message::-moz-placeholder { /* Firefox 19+ */
+  color: #95a5a6;
+}
+input.message:-ms-input-placeholder { /* IE 10+ */
+  color: #95a5a6;
+}
+input.message:-moz-placeholder { /* Firefox 18- */
+  color: #95a5a6;
+}
+
+input.message.mensaje p span  {
+	color: #95a5a6;
 }
 
 input.message::-webkit-input-placeholder { /* Chrome/Opera/Safari */

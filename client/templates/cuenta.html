@@ -19,20 +19,30 @@
         	<div id="navbar" class="navbar-collapse collapse">
 
           		<ul class="nav navbar-nav navbar-right" style="font-family: 'Imprima', sans-serif; font-size: 13px;">
+                <li>
+            			<a href="/m/{{yo}}">
+                      Mi Perfil
+            			</a>
+            		</li>
+                <li>
+            			<a href="/privado">
 
+              Mensajes
+            			</a>
+            		</li>
                 <li>
                   <div class="dropdown">
                     <a style="color: white;
   font-size: 15px;
-  text-transform: uppercase; margin-top: 15px; display: inline-block;" class=" dropdown-toggle" href="/m/{{yo}}" id="menu1" data-toggle="dropdown">
+  text-transform: uppercase; margin-top: 15px; display: inline-block; margin-left: 10px;" class=" dropdown-toggle" href="/m/{{yo}}" id="menu1" data-toggle="dropdown">
                       <span>
-                        <img style="position: relative; top: -3px; display: inline-block; margin-right: 4px;" src="/speech-bubble.png" alt="">
+
                         {{#if HaySolicitudes}}
                           <span style="background-color: white; color: #B24357; width: 20px; height: 20px; text-align: center; display: inline-block; border-radius: 70%;">{{cantidadSolicitudes}}</span>
                         {{/if}}
 
                       </span>
-                      Mi perfil
+                      Notificaciones
                       <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
@@ -55,20 +65,11 @@
                     </ul>
                   </div>
                 </li>
-            		<li>
-            			<a href="/privado">
-							<span>
-                <img style="position: relative; top: -3px; display: inline-block; margin-right: 4px;" src="/speech-bubble.png" alt="">
-							</span>
-              Mensajes
-            			</a>
-            		</li>
+
 
             		<li>
             			<a class="logout">
-            				<span>
-                      <img style="position: relative; top: -3px; display: inline-block; margin-right: 4px;" src="/power.png" alt="">
-            				</span>
+
                     Cerrar sesión
             			</a>
             		</li>

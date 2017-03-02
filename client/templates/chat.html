@@ -56,25 +56,21 @@
 						<p>
 
 							<a href="#">{{this.de.nombre}}</a>
-							<!--{{#emoji}} -->
+
 							  <span style="color: {{this.color}}">{{this.mensaje}}</span>
-							<!--{{/emoji}}-->
+							
 
 						</p>
 					</div>
 				{{/each}}
 			</div>
 			<div class="mensaje-box">
-				<input class="message" type="text" placeholder="Envía un mensaje. Para mencionar a un usuario utiliza el @." name="mensaje" id="input-default">
+				<input class="message" style="margin-top: -2.5px;" type="text" placeholder="Envía un mensaje. Para mencionar a un usuario utiliza el @." name="mensaje" id="input-default">
 
 				<div id="cp2" class="input-group colorpicker-component">
     				<input type="hidden" id="color" value="{{colores}}" class="form-control" />
     				<span class="input-group-addon"><i></i></span>
 				</div>
-
-				<!--<div class="field">
-      				<input type="text" id="input-default" class="emojiable-option" placeholder="Default">
-    			</div>-->
 
 				<input type="submit" class="enviar">
 			</div>
