@@ -3,7 +3,7 @@
 		{
 			"env":
 				{
-        			"ROOT_URL": "http://www.hupsort.com",
+        			"ROOT_URL": "http://app.hupsort.com",
 					"MONGO_URL": "mongodb://admin:admin@ds035836.mlab.com:35836/chat-grupoddv"
 				}
 		}
