@@ -155,6 +155,7 @@ Template.perfil.onCreated(function () {
     self.subscribe('fotos', perfilId);
     self.subscribe('amigos');
     self.subscribe('comentarios');
+    self.subscribe('avatares')
   });
   Session.set('corazon', '#bdc3c7');
   Session.set('like', '');
@@ -162,28 +163,35 @@ Template.perfil.onCreated(function () {
 });
 
 Template.perfil.onRendered(function () {
-   //$('[data-toggle="tooltip"]').tooltip();   
+   //$('[data-toggle="tooltip"]').tooltip();
 });
 
 Template.likes.onCreated(function () {
   var self = this;
-  self.autorun(function () {  
+  self.autorun(function () {
     self.subscribe('likes');
     console.log(Session.get('likes'));
     self.subscribe('amigos');
+    self.subscribe('avatares')
   });
 });
 
 Template.likes.helpers({
   likes: function () {
-    
-    return Likes.find({pubId: Session.get('likes')}); 
+
+    return Likes.find({pubId: Session.get('likes')});
+  },
+  avatar() {
+    return Avatares.find({'metadata.userId': this.de.id})
   }
 });
 
 Template.amigosModal.helpers({
   amigos: function () {
     return Amigos.find({userId: FlowRouter.getParam('user')});
+  },
+  avatar2() {
+    return Avatares.find({'metadata.userId': this.amigoId})
   }
 });
 
@@ -212,11 +220,14 @@ Template.perfil.events({
         }
     });
   },
+  'click .ver-likes'() {
+    Modal.show('likes')
+  },
   'click .likes': function () {
     console.log(this._id);
     let l = Session.set('likes', this._id);
     console.log(Session.get('likes'));
-    Modal.show('likes');
+    //Modal.show('likes');
   },
   'keyup .e': function (event, template) {
       event.preventDefault();
@@ -230,6 +241,8 @@ Template.perfil.events({
         Meteor.call('actualizarEstado', estado, function (err, result) {
             if (err) {
                 console.log('Hubo un error');
+            } else {
+              location.reload();
             }
         });
       }
@@ -252,7 +265,7 @@ Template.perfil.events({
     });
   },
   'click #comentar': function (e, t) {
-    
+
     e.preventDefault();
 
     let datos = {
@@ -260,10 +273,11 @@ Template.perfil.events({
       comentario: t.find("[name=" + this._id + "]").value
     }
 
-    Meteor.call('comentar', datos, function (err) {
+    Meteor.call('comentar', datos, (err) => {
       if (err) {
         console.log(err);
       } else {
+        t.find("[name=" + this._id + "]").value = ""
         console.log('comentado');
       }
     });
@@ -277,10 +291,11 @@ Template.perfil.events({
       comentario: t.find("[name=" + this._id + "]").value
     }
 
-    Meteor.call('comentar', datos, function (err) {
+    Meteor.call('comentar', datos, (err) => {
       if (err) {
         console.log(err);
       } else {
+        t.find("[name=" + this._id + "]").value = ""
         console.log('comentado');
       }
     });
@@ -290,13 +305,19 @@ Template.perfil.events({
     Modal.show('amigosModal');
   },
   'click .reportar': function () {
-    Modal.show('Reportar'); 
+    Modal.show('Reportar');
   }
  });
 
 Template.perfil.helpers({
   publicaciones: function () {
     return Muro.find({}, {sort: {createdAt: -1}});
+  },
+  avatar() {
+    return Avatares.find({'metadata.userId': FlowRouter.getParam('user')})
+  },
+  avatar2() {
+    return Avatares.find({'metadata.userId': this.amigoId})
   },
   comentarios: function () {
     return Comentarios.find({pubId: this._id});
@@ -351,6 +372,6 @@ Template.perfil.helpers({
       }
     });*/
  return Session.get('corazon');
-    
+
   }
 });

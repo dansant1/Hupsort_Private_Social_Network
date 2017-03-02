@@ -15,6 +15,7 @@
 
 .nav.nav-tabs li a {
   color: white;
+  
 }
 
 .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
@@ -26,7 +27,7 @@
 .nav-tabs > li > a:hover {
   background-color: #b10c2a;
   border-color: #b10c2a;
-  color: white; 
+  color: white;
 }
 
 li.active:hover {
@@ -47,7 +48,7 @@ li.active:hover {
   height: 400px;
   background-color: white;
   border-radius: 4px;
-} 
+}
 
 .avatares img {
   width: 100px;

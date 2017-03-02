@@ -163,13 +163,18 @@ Template.listaDeUsuariosConectadosPrivados.onCreated(function () {
 	var self = this;
 	self.autorun(function () {
 		self.subscribe('usuarios');
+    self.subscribe('avatares')
 	});
 });
 
 Template.listaDeUsuariosConectadosPrivados.helpers({
-	usuarios: function () {
+	usuarios() {
 		return Meteor.users.find({});
-	}
+	},
+  avatar2() {
+
+    return Avatares.find({'metadata.userId': this._id})
+  }
 });
 
 Template.listaDeUsuariosConectadosPrivados.events({
@@ -193,6 +198,7 @@ Template.mensajesPrivados.onCreated( function () {
 	self.autorun(function () {
         let de = FlowRouter.getParam('de');
 		self.subscribe('mensajesDirectos', de);
+    self.subscribe('avatares')
         //self.subscribe('emojis');
 		self.subscribe('fotosPrivado');
         self.subscribe('usuarios');
@@ -255,6 +261,9 @@ Template.mensajesPrivados.helpers({
 	mensajes: function () {
 		return Mensajes.find({});
 	},
+  avatar2() {
+    return Avatares.find({'metadata.userId': this.para.id})
+  },
   quien: function () {
     if (this.de.id === Meteor.userId()) {
       return 'Tú'

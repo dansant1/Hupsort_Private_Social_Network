@@ -1,7 +1,10 @@
 Meteor.methods({
 	enviarMensajeChat: function (mensaje, color) {
 		check(mensaje, String);
+
 		check(color, String);
+
+
 
 		let datos = {
 			mensaje: mensaje,
@@ -18,7 +21,8 @@ Meteor.methods({
 			datos.createdAt = new Date();
 			datos.global = true;
 
-			if ( Colores.findOne({userId: this.userId}) === undefined ) {
+			if ( Colores.find({userId: this.userId}).fetch().length === 0 ) {
+				console.log('hola');
 				Colores.insert({
 					userId: this.userId,
 					color: datos.color,
@@ -39,7 +43,7 @@ Meteor.methods({
 	},
 	comentar: function (datos) {
 		check(datos, Object);
-		
+
 		Comentarios.insert({
 			username: Meteor.users.findOne({_id: this.userId}).username,
 			userId: this.userId,

@@ -30,13 +30,17 @@ Template.listaDeUsuariosConectados.onCreated(function () {
 	var self = this;
 	self.autorun(function () {
 		self.subscribe('usuarios');
+    self.subscribe('avatares')
 	});
 });
 
 Template.listaDeUsuariosConectados.helpers({
 	usuarios: function () {
 		return Meteor.users.find({});
-	}
+	},
+  avatar() {
+    return Avatares.find({'metadata.userId': this._id})
+  }
 });
 
 function gotoBottom(id){
@@ -65,7 +69,7 @@ Template.mensajes.onCreated( function () {
 
 	self.autorun(function () {
 		self.subscribe('mensajes');
-    	//self.subscribe('emojis');
+    	self.subscribe('avatares');
     	self.subscribe('colores');
       	self.subscribe('usuarios');
       	self.subscribe('conversaciones');
@@ -80,12 +84,12 @@ Template.mensajes.events({
 
 		let mensaje = template.find("[name='mensaje']").value
 		let color = $('#color').val();
-
+    console.log('holaa');
 		console.log(color);
 
 		if (color === "") {
 			color = '#000';
-		} 
+		}
 
 		console.log(color);
 
@@ -109,6 +113,9 @@ Template.mensajes.events({
 
 			let mensaje = template.find("[name='mensaje']").value
 			let color = $('#color').val();
+      if (color === "") {
+  			color = '#000';
+  		}
       console.log(color);
 			if (mensaje !== "") {
 				Meteor.call('enviarMensajeChat', mensaje, color, function (err, result) {
@@ -207,6 +214,9 @@ Template.mensajes.helpers({
 	mensajes: function () {
 		return Mensajes.find({});
 	},
+  avatar2() {
+    return Avatares.find({'metadata.userId': this.de.id})
+  },
 	colores: function () {
     if (Colores.findOne({userId: Meteor.userId() }).color === undefined) {
       return "black";

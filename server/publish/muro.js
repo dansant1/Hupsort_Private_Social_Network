@@ -47,3 +47,12 @@ Meteor.publish('emojis', function() {
   }
 
 });
+
+Meteor.publish('notificaciones', function () {
+    if (this.userId) {
+       return Notificaciones.find({para: this.userId});
+    } else {
+      this.stop();
+      return;
+    }
+});

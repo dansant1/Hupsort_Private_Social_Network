@@ -24,3 +24,30 @@ Fotos.allow({
     return true;
   }
 });
+
+// Definimos el storage adapter GridFS
+let docStoreavatar = new FS.Store.GridFS("avatars", {
+  maxTries: 3
+});
+
+
+// Creamos la DB para Documentos
+Avatares = new FS.Collection("avatars", {
+  stores: [docStoreavatar]
+});
+
+// agregamos los permisos allow/deny
+Avatares.allow({
+  insert: function () {
+    return true;
+  },
+  update: function () {
+    return true;
+  },
+  remove: function () {
+    return true;
+  },
+  download: function () {
+    return true;
+  }
+});

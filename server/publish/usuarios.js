@@ -7,6 +7,27 @@ Meteor.publish('usuarios', function () {
 	}
 });
 
+Meteor.publish( 'Users', function( search ) {
+  check( search, Match.OneOf( String, null, undefined ) );
+
+  let query      = {},
+      projection = { limit: 0, sort: { title: 1 } };
+
+  if ( search ) {
+    let regex = new RegExp( search, 'i' );
+
+    query = {
+      $or: [
+        { username: regex },
+      ]
+    };
+
+    projection.limit = 100;
+  }
+
+  return Meteor.users.find( query, projection );
+});
+
 Meteor.publish('solicitudes', function () {
 	if (this.userId) {
 		this.ready();

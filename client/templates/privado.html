@@ -44,8 +44,10 @@
 			<div class="lista" style="padding-top: 10px;">
 				{{#each usuarios}}
 					<div class="user-card">
-						<span class="avatar"></span>
-						<p>
+            {{#each avatar2}}
+						<img src="{{url}}" class="avatar">
+            {{/each}}
+            <p>
 
 							<a href="/chat/{{this._id}}">{{this.username}}</a>
               {{#if this.profile.pais}}
@@ -73,9 +75,9 @@
       <div class="lista" id="mensajes4">
         {{#each mensajes}}
           <div class="mensaje" id="mensajes">
-            <span class="avatar-mensaje">
-
-            </span>
+            {{#each avatar2}}
+            <img src="{{url}}" class="avatar-mensaje">
+            {{/each}}
             <p>
 
               <a href="#">{{quien}}</a>
@@ -103,7 +105,7 @@
       <div class="mensaje-box">
         <input type="text"  style="width: 63%; float: left; padding-top: 13px; margin-left: 48px;" placeholder="Envía un mensaje..." name="mensaje">
         <label class="btn btn-default btn-file" style="margin-top: 0; padding-top: 14px; background-color: #b10c2a; border-color: #b10c2a; height: 100%; width: 82px; color: white; margin-right: -308px;">
-          <span style="font-size: 16px; display: inline-block; margin-right: 3px;" class="glyphicon glyphicon-picture" aria-hidden="true"></span> <!--Enviar foto -->  <input type="file" id="myArchivo" style="display: none;">
+          <span style="font-size: 16px; display: inline-block; margin-right: 3px;" class="glyphicon glyphicon-picture" aria-hidden="true"></span> <!--Enviar foto -->  <input type="file" accept="image/*" id="myArchivo" style="display: none;">
         </label>
         <input type="submit" class="enviar" style="margin-right: 65px;">
       </div>

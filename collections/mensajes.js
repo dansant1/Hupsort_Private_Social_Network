@@ -240,3 +240,4 @@ Solicitudes.deny({
 });
 
 Comentarios = new Mongo.Collection('comentarios');
+Notificaciones = new Mongo.Collection('notificaciones');

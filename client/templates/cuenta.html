@@ -10,7 +10,7 @@
             	<span class="icon-bar"></span>
           		</button>
           		<a class="navbar-brand" style="padding-top: 5px;" href="/chat"><img src="/hupsort5.png" style="width: 100px; height: 40px;" alt="" /></a>
-              <div class="search ">
+              <div class="search abrir-buscador">
                 <span class="fa fa-search"></span>
                 <input placeholder="Buscar por nombre de usuario">
               </div>
@@ -24,7 +24,7 @@
                   <div class="dropdown">
                     <a style="color: white;
   font-size: 15px;
-  text-transform: uppercase; margin-top: 15px; display: inline-block;" class=" dropdown-toggle" id="menu1" data-toggle="dropdown">
+  text-transform: uppercase; margin-top: 15px; display: inline-block;" class=" dropdown-toggle" href="/m/{{yo}}" id="menu1" data-toggle="dropdown">
                       <span>
                         <img style="position: relative; top: -3px; display: inline-block; margin-right: 4px;" src="/speech-bubble.png" alt="">
                         {{#if HaySolicitudes}}
@@ -36,6 +36,12 @@
                       <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                      {{#each notificaciones}}
+                      <li role="presentation">
+                      {{this.descripcion}}
+                      <hr>
+                      </li>
+                      {{/each}}
                       {{#each solicitudes}}
                         <li role="presentation">
                           <a  style="display: block; padding: 3px; margin-bottom: 10px" role="menuitem" tabindex="-1" href="/m/{{this.de}}">{{this.quien}}</a>

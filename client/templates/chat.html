@@ -17,7 +17,9 @@
 			<div class="lista" style="padding-top: 10px;">
 				{{#each usuarios}}
 					<div class="user-card">
-						<span class="avatar"></span>
+						{{#each avatar}}
+						<img class="avatar" src="{{url}}">
+						{{/each}}
 						<p>
 
 							<a href="/m/{{this._id}}">{{this.username}}</a>
@@ -48,9 +50,9 @@
 
 				{{#each mensajes}}
 					<div class="mensaje">
-						<span class="avatar-mensaje">
-
-						</span>
+						{{#each avatar2}}
+						<img src="{{url}}" class="avatar-mensaje">
+						{{/each}}
 						<p>
 
 							<a href="#">{{this.de.nombre}}</a>

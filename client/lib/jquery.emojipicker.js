@@ -56,10 +56,10 @@
       this.settings.height = MIN_HEIGHT;
     }
 
-    var possiblePositions = [ 'left',
-                              'right'
-                              /*,'top',
-                              'bottom'*/];
+    var possiblePositions = [ /*'left',
+                              'right'*/
+                              ,'top',
+                              'bottom'];
     if($.inArray(this.settings.position,possiblePositions) == -1) {
       this.settings.position = defaults.position; //current default
     }

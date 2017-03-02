@@ -16,6 +16,8 @@ function validateYouTubeUrl(url)
         }
 }
 
+import { request } from "meteor/froatsnook:request";
+
 Meteor.methods({
   postear: function (texto) {
     check(texto, String);
@@ -66,9 +68,18 @@ Meteor.methods({
 
       } else {
         Likes.insert(datos);
+        Notificaciones.insert({
+          createdAt: new Date(),
+          de: {
+            nombre: Meteor.users.findOne({_id: this.userId}).username,
+            id: this.userId
+          },
+          para: Muro.findOne({_id: post}).de.id,
+          descripcion: Meteor.users.findOne({_id: this.userId}).username + ' le gusto una publicacion tuya.'
+        })
       }
 
-      
+
     } else {
       return;
     }

@@ -1,0 +1,41 @@
+<template name="ModalBuscador">
+  <div class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h4 class="modal-title">Buscar Personas</h4>
+                </div>
+
+                <div class="modal-body">
+                  <div class="page-header clearfix">
+                    <h4 class="pull-left">Personas</h4>
+                    <div class="pull-right">
+                      <input type="text" name="search" class="form-control" width="250px" placeholder="Busque personas">
+                    </div>
+                  </div>
+
+                    <ul class="list-group">
+                      {{#if searching}}
+                        {{> loading}}
+                      {{else}}
+                        {{#each usuarios}}
+                          <li class="list-group-item clearfix">
+                            <span class="pull-left">{{this.username}}</span>
+                            <span class="pull-right">
+                              <a href="/m/{{this._id}}" class="btn btn-danger ir">Ver Perfil</a>
+                            </span>
+                          </li>
+                        {{/each}}
+                      {{/if}}
+                    </ul>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</template>

@@ -12,13 +12,18 @@
 
 					<h4 style="width: 80%; margin: 10px auto; text-align: center;">{{this.username}}
 					</h4>
-					<span style="display: inline-block;" class="avatar-perfil"></span>
+					{{#each avatar}}
+					<img src="{{url}}" style="display: inline-block; width: 150px; height: 150px; margin-left: 55px" >
+					{{/each}}
 					<span class="amigos">
-					<a href="/m/{{this._id}}">
+					<a href="/chat/{{this._id}}">
 						<img src="/icon.png" class="amigo">
 					</a>
+					<a href="/editar/avatar">
+						<i style="color: #b24357" class="fa fa-pencil-square-o" aria-hidden="true"></i>
+					</a>
 					{{#if esMiMuro}}
-					
+
 					{{else}}
 						<a href="#" class="agregar-amigo">
 						<img src="/add.png" class="amigo">
@@ -86,8 +91,10 @@
 					<br>
 					{{#each amigos}}
 					<div class="cuadro-amigo">
-						<img src="/login-register.jpg" alt="">
-						<h5>{{this.amigo}} </h5>
+						{{#each avatar2}}
+						<img src="{{url}}" style="height: 84px;">
+						{{/each}}
+						<h5 style="margin-bottom: 5px; margin-top: 0px">{{this.amigo}} </h5>
 					</div>
 					{{/each}}
 					<h5 class="ver" style="color: #b10c2a; font-size: 12px">Ver más amigos</h5>
@@ -102,7 +109,7 @@
 						<input type="text" name="texto" placeholder="Comparte lo que desees...">
 
 						<label class="btn btn-default btn-file" style="margin-top: 0; padding-top: 10px;">
-    					<span style="font-size: 16px;" class="glyphicon glyphicon-picture" aria-hidden="true"></span> <input type="file" id="myArchivo" style="display: none;">
+    					<span style="font-size: 16px;" class="glyphicon glyphicon-picture" aria-hidden="true"></span> <input type="file" id="myArchivo" accept="image/*" style="display: none;">
 						</label>
 						<button class="postear">
 							Postear
@@ -161,10 +168,10 @@
 					<div class="publicacion">
 						<a>{{this.de.nombre}}</a>
 						<p>{{this.texto}}</p>
-						
+
 						<span class="glyphicon likes glyphicon-heart like" style="color: {{corazon}}" aria-hidden="true"></span>
 
-						{{likes}}
+						<span class="ver-likes">{{likes}}</span>
 
 						<form class="muro" style="margin: 0;">
 							<input type="text" style="margin-left: 0;" name="{{_id}}" placeholder="Comentar publicación...">
@@ -197,7 +204,9 @@
                 <div class="modal-body">
                     {{#each amigos}}
 					<div class="cuadro-amigo">
-						<img src="/login-register.jpg" alt="" style="width: 85px; margin-top: 15px;">
+						{{#each avatar2}}
+						<img src="{{url}}" alt="" style="width: 85px; margin-top: 15px;">
+						{{/each}}
 						<h5>{{this.amigo}} </h5>
 					</div>
 					{{/each}}
@@ -223,15 +232,20 @@
 
                 <div class="modal-body">
                     <table class="table">
-   
+
     					<tbody>
       						<tr>
         						{{#each likes}}
-        						<td>{{this.de.nombre}}</td>
+        						<td>
+											 	{{#each avatar}}
+												<img src="{{url}}" class="avatar">
+												{{/each}}
+											 {{this.de.nombre}}
+										 </td>
         						{{/each}}
-        						
+
       						</tr>
-     
+
     					</tbody>
   					</table>
                 </div>
@@ -259,7 +273,7 @@
   						<div class="form-group">
   					  		<textarea placeholder="¿Por que deseas reportar este usuario?" class="form-control" rows="10" id="comment"></textarea>
 						</div>
-	 
+
   						<button data-dismiss="modal" type="submit" class="btn btn-default">Reportar</button>
 					</form>
                 </div>

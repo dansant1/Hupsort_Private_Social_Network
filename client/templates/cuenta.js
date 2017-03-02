@@ -39,6 +39,9 @@ function Sound(source,volume,loop)
 }
 
 Template.cuenta.events({
+  'click .abrir-buscador'() {
+    Modal.show('ModalBuscador')
+  },
 	'click .logout': function () {
 		Meteor.logout();
 		FlowRouter.go('/');
@@ -100,8 +103,9 @@ Template.cuenta.onCreated(function () {
       self.subscribe('usuarios');
       self.subscribe('solicitudes', function () {
 
-        
+
       });
+      self.subscribe('notificaciones')
 
       var s = Solicitudes.find({para: Meteor.userId(), aceptado: false}).fetch().length;
 
@@ -113,6 +117,12 @@ Template.cuenta.onCreated(function () {
 
 
 Template.cuenta.helpers({
+  notificaciones() {
+    return Notificaciones.find()
+  },
+  yo() {
+    return Meteor.userId()
+  },
   solicitudes: function () {
     return Solicitudes.find();
   },
@@ -126,7 +136,7 @@ Template.cuenta.helpers({
     }
   },
   cantidadSolicitudes: function () {
-    
+
     return Solicitudes.find({para: Meteor.userId(), aceptado: false}).fetch().length;
   }
 });
