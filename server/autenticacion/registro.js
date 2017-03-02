@@ -11,16 +11,10 @@ Meteor.methods({
 
 
 		if (usuarioId) {
-			Accounts.sendVerificationEmail( usuarioId );
-
-			Meteor.defer( () => {
-				/*Email.send({
-				  to: datos.email,
-				  from: 'mariellaperedab@gmail.com',
-				  subject: "Bienvenido a Hupsort",
-				  html:
-				});*/
+			Meteor.defer( function () {
+				Accounts.sendVerificationEmail( usuarioId );
 			})
+
 
 			Roles.addUsersToRoles(usuarioId, ['usuario'], 'chat');
 
