@@ -38,3 +38,15 @@ Meteor.publish('conversaciones', function () {
 	}
 
 });
+
+Meteor.publish('terminos', function () {
+
+			return Terminos.find();
+
+});
+
+Meteor.publish('politicas', function () {
+
+	return Politicas.find();
+
+});

@@ -1,0 +1,53 @@
+<template name="ConfigTerms">
+  <div class="container">
+    <br><br>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="comment">Terminos y Condiciones</label>
+          <textarea class="form-control" rows="20" name="terminos"></textarea>
+          <br>
+          <button type="button" class="btn btn-primary gt" style="background-color: #b24357; border-color: #b24357">Guardar</button>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="comment">Politicas de Privacidad</label>
+          <textarea class="form-control" rows="20" name="politicas"></textarea>
+          <br>
+          <button type="button" class="btn btn-primary gp" style="background-color: #b24357; border-color: #b24357">Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="TerminosYCondiciones">
+  <div class="container">
+    <div class="row">
+      <h1 style="margin-left: 8px;">Términos Y Condiciones</h1>
+      <br>
+
+      <div class="col-md-12">
+        {{#each terminos}}
+          <p>{{this.contenido}}</p>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="PoliticasDePrivacidad">
+  <div class="container">
+    <div class="row">
+      <h1 style="margin-left: 8px;">Políticas de Privacidad</h1>
+      <br>
+
+      <div class="col-md-12">
+        {{#each terminos}}
+          <p>{{this.contenido}}</p>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</template>
