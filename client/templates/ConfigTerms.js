@@ -32,6 +32,16 @@ Template.ConfigTerms.events({
   }
 })
 
+Template.ConfigTerms.helpers({
+  esMariella() {
+    if (Meteor.user().emails[0].address === 'mariellaperedab@gmail.com') {
+      return true;
+    } else {
+      return false;
+    }
+  }
+})
+
 Template.TerminosYCondiciones.onCreated(() => {
   let template = Template.instance()
 
