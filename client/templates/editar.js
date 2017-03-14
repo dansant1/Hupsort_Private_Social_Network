@@ -74,7 +74,7 @@ Template.avatar.onRendered( () => {
   template.cabello.onload = function() {
       resourceLoaded();
   }
-  template.cabello.src = '/avatares/a/cabello/' + genero + '/1.png'
+  template.cabello.src = '/avatares/a/cabello/' + genero + '/negro/1.png'
   template.ojo = new Image()
   template.ojo.onload = function() {
       resourceLoaded();
@@ -144,7 +144,7 @@ Template.avatar.onRendered( () => {
     contexto.drawImage(template.fondo, 0, 0);
 
     contexto.drawImage(template.rostro, 0, 0);
-    contexto.drawImage(template.cabello, 0, 0);
+    contexto.drawImage(template.cabello, 0, 0, 400, 400);
     contexto.drawImage(template.ceja, 0, 0);
     contexto.drawImage(template.boca, 0, 0);
     contexto.drawImage(template.ojo, 0, 0);
@@ -207,6 +207,7 @@ Template.avatar.events({
   },
   'click .cabellos'(e, t) {
     t.cabello.src = e.target.src;
+    //console.log(e.target.src);
   },
   'click .ojos'(e, t) {
     t.ojo.src = e.target.src;

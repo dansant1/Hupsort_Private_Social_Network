@@ -72,6 +72,8 @@ function sonar () {
 var soundFile = document.createElement("audio");
 soundFile.preload = "auto";
 
+Session.set('sound', '/n')
+
 var fileName = "/n"
 
 //Load the sound file (using a source element for expandability)

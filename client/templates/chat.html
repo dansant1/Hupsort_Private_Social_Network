@@ -18,7 +18,7 @@
 				{{#each usuarios}}
 					<div class="user-card">
 						{{#each avatar}}
-						<img class="avatar" src="{{url}}">
+						<img style="width: 52px" src="{{url}}">
 						{{/each}}
 						<p>
 
@@ -51,14 +51,14 @@
 				{{#each mensajes}}
 					<div class="mensaje">
 						{{#each avatar2}}
-						<img src="{{url}}" class="avatar-mensaje">
+						<img src="{{url}}" style="width: 52px">
 						{{/each}}
 						<p>
 
 							<a href="#">{{this.de.nombre}}</a>
 
 							  <span style="color: {{this.color}}">{{this.mensaje}}</span>
-							
+
 
 						</p>
 					</div>

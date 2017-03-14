@@ -36,6 +36,7 @@ Meteor.methods({
     if (this.userId) {
       if (Terminos.find().fetch().length > 0) {
         let id = Terminos.find().fetch()[0]._id;
+        console.log(id);
         Terminos.update({_id: id}, {
           $set: {
             contenido: terminos
@@ -55,7 +56,9 @@ Meteor.methods({
     check(terminos, String)
     if (this.userId) {
       if (Politicas.find().fetch().length > 0) {
+
         let id = Politicas.find().fetch()[0]._id;
+        console.log(id);
         Politicas.update({_id: id}, {
           $set: {
             contenido: terminos

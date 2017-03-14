@@ -8,7 +8,7 @@ Template.ConfigTerms.events({
         if (err) {
           alert(err)
         } else {
-          alert('Datos Guardados')
+          alert('Terminos Y Condiciones Guardados')
         }
       })
     } else {
@@ -17,13 +17,13 @@ Template.ConfigTerms.events({
   },
   'click .gp'(e, t) {
     e.preventDefault()
-    let terminos = t.find("[name='terminos']").value;
+    let terminos = t.find("[name='politicas']").value;
     if (terminos !== '') {
       Meteor.call('actualizarPoliticas', terminos, (err) => {
         if (err) {
           alert(err)
         } else {
-          alert('Datos Guardados')
+          alert('Politicas De Privacidad Guardados')
         }
       })
     } else {
