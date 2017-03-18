@@ -51,3 +51,5 @@ Avatares.allow({
     return true;
   }
 });
+
+Files = new Mongo.Collection("files")

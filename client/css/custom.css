@@ -11,6 +11,24 @@
  	top: 320px;
  }
 
+ .upload-area .alert {
+  position: relative;
+}
+
+.preview img {
+	width: 300px;
+}
+
+.upload-area input[type="file"] {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  width: 100%;
+  opacity: 0;
+}
+
 .tt-input, /* UPDATE: newer versions use tt-input instead of tt-query */
 .tt-hint {
     width: 396px;

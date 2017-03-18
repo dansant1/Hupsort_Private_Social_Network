@@ -161,6 +161,30 @@ Template.avatar.onRendered( () => {
 
   function dlCanvas() {
     let doc = canva.toDataURL('img/png');
+
+    canva.toBlob(function(file) {
+      const uploader = new Slingshot.Upload( "uploadToAmazonS3" );
+
+      uploader.send( file, ( error, url ) => {
+        if ( error ) {
+          //Bert.alert( error.message, "warning" );
+          _setPlaceholderText();
+        } else {
+          Meteor.call( "storeUrlInDatabase", url, ( error ) => {
+            if ( error ) {
+              //Bert.alert( error.reason, "warning" );
+              //_setPlaceholderText();
+              console.log(error)
+            } else {
+              console.log('subio!')
+              //Bert.alert( "File uploaded to Amazon S3!", "success" );
+              //_setPlaceholderText();
+            }
+          });
+        }
+      });
+      //uploader.send(blob, function(error, downloadUrl) {/*...*/}) ;
+    });
     console.log('guardar');
     let d = new FS.File(doc);
     d.name('avatar');

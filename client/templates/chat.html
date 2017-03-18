@@ -152,3 +152,53 @@
         </div>
     </div>
 </template>
+
+<template name="upload">
+<div class="container">
+	<div class="row">
+		<div class="col-md-8">
+			<h4 class="page-header">Upload a File to Amazon S3</h4>
+  			{{> uploader}}
+  			{{> files}}
+		</div>
+	</div>
+</div>	
+  
+</template>
+
+<template name="uploader">
+  <div class="upload-area">
+    <form id="upload">
+      <p class="alert alert-success text-center">
+        <span>Click or Drag a File Here to Upload</span>
+        <input type="file">
+      </p>
+    </form>
+  </div>
+</template>
+
+<template name="files">
+  <div class="files">
+    {{#each files}}
+      {{> file}}
+    {{else}}
+      <p class="alert alert-warning">No files uploaded yet!</p>
+    {{/each}}
+  </div>
+</template>
+
+<template name="file">
+  <div class="file">
+  	<br>
+    <div class="preview">
+      <a href="{{url}}" target="_blank"></a>
+      {{#if isImage url}}
+        <img src="{{url}}" alt="{{url}}">
+      {{else}}
+        <i class="fa fa-file-o"></i>
+      {{/if}}
+    </div>
+    <br>
+    <input type="text" disabled class="form-control" value="{{url}}">
+  </div>
+</template>
