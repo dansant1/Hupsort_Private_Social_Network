@@ -18,7 +18,7 @@
 				{{#each usuarios}}
 					<div class="user-card">
 						{{#each avatar}}
-						<img style="width: 52px" src="{{url}}">
+						<img style="width: 81px; height: 98px;" src="{{url}}">
 						{{/each}}
 						<p>
 
@@ -51,7 +51,7 @@
 				{{#each mensajes}}
 					<div class="mensaje">
 						{{#each avatar2}}
-						<img src="{{url}}" style="width: 52px">
+						<img src="{{url}}" style="width: 81px; height: 98px;">
 						{{/each}}
 						<p>
 
@@ -65,7 +65,7 @@
 				{{/each}}
 			</div>
 			<div class="mensaje-box">
-				<input class="message" style="margin-top: -2.5px;" type="text" placeholder="Envía un mensaje. Para mencionar a un usuario utiliza el @." name="mensaje" id="input-default">
+				<input class="message" style="background-color: #B24357; border: none; margin-top: -2.5px;" type="text" placeholder="Envía un mensaje. Para mencionar a un usuario utiliza el @." name="mensaje" id="input-default">
 
 				<div id="cp2" class="input-group colorpicker-component">
     				<input type="hidden" id="color" value="{{colores}}" class="form-control" />
@@ -162,8 +162,8 @@
   			{{> files}}
 		</div>
 	</div>
-</div>	
-  
+</div>
+
 </template>
 
 <template name="uploader">

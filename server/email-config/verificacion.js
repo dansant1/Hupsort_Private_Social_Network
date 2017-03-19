@@ -1,5 +1,5 @@
 Accounts.emailTemplates.siteName = "Chat";
-Accounts.emailTemplates.from     = "Mariella <mariellaperedab@gmail.com>";
+Accounts.emailTemplates.from     = "Mariella <contacto@hupsort.com>";
 
 Accounts.emailTemplates.verifyEmail = {
   subject() {
@@ -16,7 +16,7 @@ Accounts.emailTemplates.verifyEmail = {
 
       let emailAddress   = user.emails[0].address,
           urlWithoutHash = url.replace( '#/', '' ),
-          supportEmail   = "mariellaperedab@gmail.com",
+          supportEmail   = "contacto@hupsort.com",
           emailBody      = SSR.render('Bienvenido', emailData)//`Para verificar tu dirección de correo electronico (${emailAddress}) visita el siguiente link:\n\n${urlWithoutHash}\n\n Si no solicitaste esta verificación, por favor ignora este email. Si sientes que hubo un error, por favor contactate con nuestro equipo de soporte: ${supportEmail}.`;
 
       return emailBody;

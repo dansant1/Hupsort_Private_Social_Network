@@ -94,10 +94,11 @@ Template.avatar.onRendered( () => {
   template.boca.onload = function() {
       resourceLoaded();
   }
-  template.boca.src = '/avatares/a/bocas/' + genero + '/2.png'
+
+
 
   if (genero === 'Hombre') {
-
+    template.boca.src = '/avatares/a/bocas/' + genero + '/2.png'
     template.barba = new Image()
     template.barba.onload = function() {
         resourceLoaded();
@@ -110,6 +111,8 @@ Template.avatar.onRendered( () => {
     }
     template.bigote.src = undefined; //'/avatares/a/bigotes/' + genero + '/marronoscuro/1.png'
 
+  } else {
+    template.boca.src = '/avatares/a/bocas/' + genero + '/naranja/2.png'
   }
 
   template.ropa = new Image()
@@ -144,9 +147,12 @@ Template.avatar.onRendered( () => {
     contexto.drawImage(template.fondo, 0, 0);
 
     contexto.drawImage(template.rostro, 0, 0);
-    contexto.drawImage(template.cabello, 0, 0, 400, 400);
+    contexto.drawImage(template.expresion, 0, 0);
     contexto.drawImage(template.ceja, 0, 0);
+    contexto.drawImage(template.cabello, 0, 0, 400, 400);
+
     contexto.drawImage(template.boca, 0, 0);
+
     contexto.drawImage(template.ojo, 0, 0);
     contexto.drawImage(template.nariz, 0, 0);
     contexto.drawImage(template.accesorio, 0, -8);
@@ -235,6 +241,9 @@ Template.avatar.events({
   },
   'click .ojos'(e, t) {
     t.ojo.src = e.target.src;
+  },
+  'click .expresiones'(e, t) {
+    t.expresion.src = e.target.src;
   },
   'click .cejas'(e, t) {
     t.ceja.src = e.target.src;

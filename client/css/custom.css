@@ -9,6 +9,13 @@
  #emojiPickerWrap {margin:10px 0 0 0;}
  .emojiPicker {
  	top: 320px;
+
+ }
+
+ .emojiPickerIcon .black {
+   height: 30px;
+   width: 32px;
+   top: -5px;
  }
 
  .upload-area .alert {
@@ -635,7 +642,7 @@ iframe {
 }
 
 input.message::placeholder {
-  color: #95a5a6;
+  color: red;
 }
 
 input.message::-webkit-input-placeholder { /* Chrome/Opera/Safari */
