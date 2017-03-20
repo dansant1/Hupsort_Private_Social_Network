@@ -20,6 +20,27 @@
         </div>
       </div>
     </div>
+    <div class="row">
+
+      <br>
+
+      <div class="col-md-6">
+        Terminos
+        {{#each terminos}}
+        <textarea class="form-control e{{this._id}}" rows="20" name="politicas">{{this.contenido}}</textarea>
+        <br>
+        <button type="button" class="btn btn-primary et" style="background-color: #b24357; border-color: #b24357">Editar</button>
+        {{/each}}
+      </div>
+      <div class="col-md-6">
+        Politicas
+        {{#each politicas}}
+        <textarea class="form-control p{{this._id}}" rows="20" name="politicas">{{this.contenido}}</textarea>
+        <br>
+        <button type="button" class="btn btn-primary ep" style="background-color: #b24357; border-color: #b24357">Editar</button>
+        {{/each}}
+      </div>
+    </div>
     {{/if}}
   </div>
 </template>
@@ -33,6 +54,7 @@
       <div class="col-md-12">
         {{#each terminos}}
           <p>{{this.contenido}}</p>
+
         {{/each}}
       </div>
     </div>
@@ -48,6 +70,7 @@
       <div class="col-md-12">
         {{#each terminos}}
           <p>{{this.contenido}}</p>
+
         {{/each}}
       </div>
     </div>

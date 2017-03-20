@@ -34,19 +34,11 @@ Meteor.methods({
   actualizarTerminos(terminos) {
     check(terminos, String)
     if (this.userId) {
-      if (Terminos.find().fetch().length > 0) {
-        let id = Terminos.find().fetch()[0]._id;
-        console.log(id);
-        Terminos.update({_id: id}, {
-          $set: {
-            contenido: terminos
-          }
-        })
-      } else {
+
           Terminos.insert({
             contenido: terminos
           })
-      }
+
 
     } else {
       return;
@@ -55,23 +47,33 @@ Meteor.methods({
   actualizarPoliticas(terminos) {
     check(terminos, String)
     if (this.userId) {
-      if (Politicas.find().fetch().length > 0) {
 
-        let id = Politicas.find().fetch()[0]._id;
-        console.log(id);
-        Politicas.update({_id: id}, {
-          $set: {
-            contenido: terminos
-          }
-        })
-      } else {
           Politicas.insert({
             contenido: terminos
           })
-      }
+
 
     } else {
       return;
     }
+  },
+  updateTerminos(id, contenido) {
+    check(id, String)
+    check(contenido, String)
+    console.log(id);
+    Terminos.update({_id: id}, {
+      $set: {
+        contenido: contenido
+      }
+    })
+  },
+  updatePoliticas(id, contenido) {
+    check(id, String)
+    check(contenido, String)
+    Politicas.update({_id: id}, {
+      $set: {
+        contenido: contenido
+      }
+    })
   }
 });

@@ -1,3 +1,12 @@
+Template.ConfigTerms.onCreated(() => {
+  let template = Template.instance()
+
+  template.autorun( () => {
+    template.subscribe('terminos')
+    template.subscribe('politicas')
+  })
+})
+
 Template.ConfigTerms.events({
   'click .gt'(e, t) {
     e.preventDefault()
@@ -29,6 +38,40 @@ Template.ConfigTerms.events({
     } else {
       alert('Complete los datos')
     }
+  },
+  'click .et'(e, t) {
+    let contenido = $('.e' + this._id).val();
+
+    console.log(contenido);
+    console.log(this._id);
+
+    if (contenido !== "") {
+      Meteor.call('updateTerminos', this._id, contenido, (err) => {
+        if (err) {
+          alert(err)
+        } else {
+          alert('Parrafo Actualziado')
+        }
+      })
+    } else {
+      alert('Complete los datos')
+    }
+
+  },
+  'click .ep'() {
+    let contenido = $('.p' + this._id).val();
+
+    if (contenido !== "") {
+      Meteor.call('updatePoliticas', this._id, contenido, (err) => {
+        if (err) {
+          alert(err)
+        } else {
+          alert('Parrafo Actualziado')
+        }
+      })
+    } else {
+      alert('Complete los datos')
+    }
   }
 })
 
@@ -39,6 +82,12 @@ Template.ConfigTerms.helpers({
     } else {
       return false;
     }
+  },
+  terminos() {
+    return Terminos.find();
+  },
+  politicas() {
+    return Politicas.find();
   }
 })
 
