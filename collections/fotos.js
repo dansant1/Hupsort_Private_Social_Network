@@ -53,3 +53,7 @@ Avatares.allow({
 });
 
 Files = new Mongo.Collection("files")
+
+ImagenesMuro = new Mongo.Collection("imagenes_muro")
+
+Imagenes = new Mongo.Collection("imagenes")

@@ -7,6 +7,7 @@ let _isNotAmazonUrl = ( url ) => {
 };
 
 let _validateUrl = ( url ) => {
+  console.log('si existe');
   if ( _fileExistsInDatabase( url ) ) {
     Files.update({ "url": url, "userId": Meteor.userId()}, {
       $set: {

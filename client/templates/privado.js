@@ -120,7 +120,7 @@ function subirFotoPrivado (event, template) {
 
           for (var i = 0; i < archivo.files.length; i++) {
 
-            var filei = archivo.files[i];
+            let filei = archivo.files[i];
 
             var doc = new FS.File(filei);
 
@@ -142,7 +142,25 @@ function subirFotoPrivado (event, template) {
 							if (error) {
 								console.log('Hubo un error');
 							} else {
-								doc.metadata.mensajeId = result._id;
+
+                const uploader = new Slingshot.Upload( "uploadToAmazonS3" );
+
+                uploader.send( filei, ( error, url ) => {
+                  if ( error ) {
+                    console.log(error);
+                  } else {
+                    Meteor.call( "storeUrlOfImageInDatabase", url, result._id, ( error ) => {
+                      if ( error ) {
+
+                        console.log(error)
+                      } else {
+                        console.log('subio!')
+
+                      }
+                    });
+                  }
+                });
+                doc.metadata.mensajeId = result._id;
 								Fotos.insert(doc, function (err, fileObj) {
 		              if (err) {
 		                alert('Hubo un problema', 'warning');

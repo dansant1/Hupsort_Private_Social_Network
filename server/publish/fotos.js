@@ -31,7 +31,28 @@ Meteor.publish('avatares', function () {
 });
 
 Meteor.publish( 'files', function(){
-  var data = Files.find( { "userId": this.userId } );
+  var data = Files.find();
+
+  if ( data ) {
+    return data;
+  }
+
+  return this.ready();
+});
+
+Meteor.publish( 'imagenes', function(){
+  var data = Imagenes.find();
+
+  if ( data ) {
+    return data;
+  }
+
+  return this.ready();
+});
+
+
+Meteor.publish( 'imagenesMuro', function(){
+  var data = ImagenesMuro.find();
 
   if ( data ) {
     return data;

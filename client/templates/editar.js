@@ -149,13 +149,13 @@ Template.avatar.onRendered( () => {
     contexto.drawImage(template.rostro, 0, 0);
     contexto.drawImage(template.expresion, 0, 0);
     contexto.drawImage(template.ceja, 0, 0);
-    contexto.drawImage(template.cabello, 0, 0, 400, 400);
+    contexto.drawImage(template.cabello, 0, 0);
 
     contexto.drawImage(template.boca, 0, 0);
 
     contexto.drawImage(template.ojo, 0, 0);
     contexto.drawImage(template.nariz, 0, 0);
-    contexto.drawImage(template.accesorio, 0, -8);
+    contexto.drawImage(template.accesorio, 0, 0);
     contexto.drawImage(template.ropa, 0, 0);
 
 

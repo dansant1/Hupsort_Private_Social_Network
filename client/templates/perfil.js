@@ -127,6 +127,23 @@ function subirFoto (event, template, pubId) {
             var nuevoNombre = removeDiacritics(doc.name());
             doc.name(nuevoNombre);
 
+            const uploader = new Slingshot.Upload( "uploadToAmazonS3" );
+
+            uploader.send( filei, ( error, url ) => {
+              if ( error ) {
+                console.log(error);
+              } else {
+                Meteor.call( "storeUrlOfImageMuroInDatabase", url, pubId, ( error ) => {
+                  if ( error ) {
+                    console.log(error)
+                  } else {
+                    console.log('subio!')
+
+                  }
+                });
+              }
+            })
+
             doc.metadata = {
               creadorId: Meteor.userId(),
               pubId: pubId,
