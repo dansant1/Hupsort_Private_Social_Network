@@ -827,11 +827,11 @@ input.message:-moz-placeholder { /* Firefox 18- */
   margin: -10px auto;
   border-radius: 3px;
   width: 99%;
-  height: 70px;
+  height: 85px;
 }
 
 .cuadro-amigo h5 {
   position: relative;
-  top: -28px;
+  top: -38px;
   color: white
 }

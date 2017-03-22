@@ -16,9 +16,13 @@
 					<img src="{{url}}" style="display: inline-block; width: 132px; height: 173px; margin-left: 70px" >
 					{{/each}}
 					<span class="amigos">
-					<a href="/chat/{{this._id}}">
-						<img src="/icon.png" class="amigo">
-					</a>
+						{{#if esMiMuro}}
+						{{else}}
+						<a href="/chat/{{this._id}}">
+							<img src="/icon.png" class="amigo">
+						</a>
+						{{/if}}
+
 					{{#if esMiMuro}}
 					<a href="/editar/avatar">
 						<i style="color: #b24357" class="fa fa-pencil-square-o" aria-hidden="true"></i>
@@ -94,7 +98,7 @@
 					{{#each amigos}}
 					<div class="cuadro-amigo">
 						{{#each avatar2}}
-						<img src="{{url}}" style="height: 84px;">
+						<a href="/m/{{this.metadata.userId}}"><img src="{{url}}" style="height: 95px;"></a>
 						{{/each}}
 						<h5 style="margin-bottom: 5px; margin-top: 0px">{{this.amigo}} </h5>
 					</div>

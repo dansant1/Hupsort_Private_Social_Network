@@ -11,14 +11,16 @@ Accounts.emailTemplates.verifyEmail = {
       var emailData = {
           emailAddress: user.emails[0].address,
           nombre: user.username,
-          urlWithoutHash: url.replace( '#/', '' )
+          urlWithoutHash: url.replace( '#/', '' ),
+          absoluteUrl: Meteor.absoluteUrl('hupsort1.png')
       };
+
+      console.log(emailData.absoluteUrl);
 
       let emailAddress   = user.emails[0].address,
           urlWithoutHash = url.replace( '#/', '' ),
           supportEmail   = "contacto@hupsort.com",
-          emailBody      = SSR.render('Bienvenido', emailData)//`Para verificar tu dirección de correo electronico (${emailAddress}) visita el siguiente link:\n\n${urlWithoutHash}\n\n Si no solicitaste esta verificación, por favor ignora este email. Si sientes que hubo un error, por favor contactate con nuestro equipo de soporte: ${supportEmail}.`;
-
+          emailBody      = SSR.render('Bienvenido', emailData)
       return emailBody;
   }
 };

@@ -280,7 +280,7 @@ Template.mensajesPrivados.helpers({
 		return Mensajes.find({});
 	},
   avatar2() {
-    return Avatares.find({'metadata.userId': this.para.id})
+    return Avatares.find({'metadata.userId': this.de.id})
   },
   quien: function () {
     if (this.de.id === Meteor.userId()) {
