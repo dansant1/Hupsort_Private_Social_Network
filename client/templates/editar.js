@@ -57,7 +57,7 @@ Template.avatar.onRendered( () => {
   template.fondo.onload = function() {
       resourceLoaded();
   }
-  template.fondo.src = '/avatares/a/fondos/1.png'
+  template.fondo.src = '/avatares/a/blank.png'
 
   template.expresion = new Image();
   template.expresion.onload = function() {
@@ -144,7 +144,7 @@ Template.avatar.onRendered( () => {
 
     contexto.canvas.width = 360; //contexto.canvas.width; // clears the canvas
     contexto.canvas.height = 500;
-    contexto.drawImage(template.fondo, 0, 0);
+    contexto.drawImage(template.fondo, 40, 0);
 
     contexto.drawImage(template.rostro, 0, 0);
     contexto.drawImage(template.expresion, 0, 0);

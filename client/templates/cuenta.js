@@ -120,7 +120,7 @@ Template.cuenta.onCreated(function () {
 
 Template.cuenta.helpers({
   notificaciones() {
-    return Notificaciones.find()
+    return Notificaciones.find({}, {sort: {createdAt: -1}})
   },
   yo() {
     return Meteor.userId()
