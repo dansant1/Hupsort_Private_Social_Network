@@ -1,13 +1,16 @@
 <template name="editar">
   <div class="row">
+    
 
     <div class="col-md-12">
-      <br>
-      <br>
-      <br>
-      <br>
 
 
+      <br>
+      <br>
+      <br>
+      <br>
+      
+      {{#if estaVerificado}}
       <div class="box-white" style="padding: 30px;">
         <form>
 
@@ -57,6 +60,11 @@
         </form>
       </div>
 
+      {{else}}
+        
+        <h2>Te hemos enviado un email de verificación</h2>
+
+      {{/if}}
     </div>
   </div>
 </template>

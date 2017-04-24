@@ -19,7 +19,7 @@ Template.registro.events({
       if ($('.aceptar').is(':checked')) {
         Meteor.call('crearUsuario', datos, function (err, result) {
           if (err) {
-            console.log('Hubo un error');
+            alert('Hubo un error');
 
           } else {
             console.log('Bienvenido');
@@ -39,7 +39,7 @@ Template.registro.events({
 
 
 		} else {
-			console.log('faltan datos');
+			alert('faltan datos');
 		}
 	}
 });

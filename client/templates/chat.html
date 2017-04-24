@@ -5,8 +5,16 @@
 	<br>
 	<br>
 	<div class="row">
+
+	{{#if estaVerificado}}
+
 		{{>listaDeUsuariosConectados}}
 		{{>mensajes}}
+	{{else}}
+		
+		<h2>Te hemos enviado un email de verificación</h2>
+
+	{{/if}}
 	</div>
 	<br><br>
 </template>
@@ -38,6 +46,7 @@
 </template>
 
 <template name="mensajes">
+{{#if estaVerificado}}
 	<div class="col-md-8">
 		<div class="box-white">
 			<div class="conversaciones">
@@ -76,6 +85,11 @@
 			</div>
 		</div>
 	</div>
+{{else}}
+		
+		<h2>Te hemos enviado un email de verificación</h2>
+
+	{{/if}}
 </template>
 
 <template name="Privados">
@@ -85,8 +99,14 @@
 	<br>
 	<br>
 	<div class="row">
+	{{#if estaVerificado}}
 		{{>listaDeUsuariosConectados}}
 		{{>mensajesPrivados}}
+	{{else}}
+		
+		<h2>Te hemos enviado un email de verificación</h2>
+
+	{{/if}}
 	</div>
 	<br><br>
 </template>

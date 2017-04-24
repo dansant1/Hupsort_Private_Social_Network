@@ -1,4 +1,6 @@
 <template name="perfil">
+
+
 <br>
 <br>
 <br>
@@ -6,6 +8,7 @@
 <br>
 	<div class="container">
 		<div class="row">
+		{{#if estaVerificado}}
 			<div class="col-md-3">
 				<div class="box-white" style="padding-top: 15px; color: #777">
 					{{#with usuario}}
@@ -213,7 +216,14 @@
 					{{/each}}
 				</div>
 			</div>
+
+			{{else}}
+
+			<h2>Te hemos enviado un email de verificación</h2>
+
+			{{/if}}
 		</div>
+		
 	</div>
 </template>
 

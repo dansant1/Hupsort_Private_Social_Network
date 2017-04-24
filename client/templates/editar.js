@@ -29,7 +29,69 @@ Template.editar.events({
 			alert('Complete los datos')
 		}
 	}
-});
+})
+
+Template.editar.helpers({
+  estaVerificado() {
+    let verficado = Meteor.user().emails[0].verified
+
+    if (verficado) {
+      return true
+    } 
+
+    return false
+  }
+})
+
+Template.chat.helpers({
+  estaVerificado() {
+    let verficado = Meteor.user().emails[0].verified
+
+    if (verficado) {
+      return true
+    } 
+
+    return false
+  }
+})
+
+Template.Privados.helpers({
+  estaVerificado() {
+    let verficado = Meteor.user().emails[0].verified
+
+    if (verficado) {
+      return true
+    } 
+
+    return false
+  }
+})
+
+Template.mensajes.helpers({
+  estaVerificado() {
+    let verficado = Meteor.user().emails[0].verified
+
+    if (verficado) {
+      return true
+    } 
+
+    return false
+  }
+})
+
+Template.perfil.helpers({
+  estaVerificado() {
+    let verficado = Meteor.user().emails[0].verified
+
+    if (verficado) {
+      return true
+    } 
+
+    return false
+  }
+})
+
+
 
 Template.avatar.onCreated(function () {
   var self = this;
