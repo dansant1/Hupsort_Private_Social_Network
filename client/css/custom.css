@@ -796,7 +796,6 @@ input.message:-moz-placeholder { /* Firefox 18- */
             transform-origin :100% 100%;
 }
 
-
 .estate {
      width: 200px;
      max-height: 130px;
@@ -812,7 +811,6 @@ input.message:-moz-placeholder { /* Firefox 18- */
 .estate span:focus {
   outline: none;
 }
-
 
 .cuadro-amigo {
   display: inline-block;
@@ -835,3 +833,43 @@ input.message:-moz-placeholder { /* Firefox 18- */
   top: -38px;
   color: white
 }
+
+#left__in {
+  	margin-left: 52px
+}
+
+
+
+@media (max-width: 500px) {
+  #top__full {
+    margin-top: 90px;
+  }
+
+  .pantalla-inicio {
+  	height: 75vh
+  }
+
+  .resize {
+  	display: block;
+  	margin-left: 65px;
+  }
+
+  #left__in {
+  	margin-left: 85px
+  }
+
+  .muro button, .muro btn, .muro btn-default, .muro label {
+  	width: 36%
+  }
+
+  .muro input {
+  	width: 90%;
+  }
+
+  .mensaje-box > input[type="submit"] {
+  	display: block;
+    width: 100%;
+    margin-top: 11px
+  }
+}
+

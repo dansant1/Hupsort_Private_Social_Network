@@ -13,9 +13,7 @@ Accounts.emailTemplates.verifyEmail = {
           nombre: user.username,
           urlWithoutHash: url.replace( '#/', '' ),
           absoluteUrl: Meteor.absoluteUrl('hupsort1.png')
-      };
-
-      console.log(emailData.absoluteUrl);
+      }
 
       let emailAddress   = user.emails[0].address,
           urlWithoutHash = url.replace( '#/', '' ),
