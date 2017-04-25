@@ -22,9 +22,9 @@
 <template name="listaDeUsuariosConectados">
 	<div class="col-md-4">
 		<div class="box-white">
-			<div class="lista" style="padding-top: 10px;">
+			<div class="lista lista__responsive" style="padding-top: 10px;">
 				{{#each usuarios}}
-					<div class="user-card">
+					<div class="user-card user__card__responsive">
 						{{#each avatar}}
 						<img style="width: 81px; height: 98px;" src="{{url}}">
 						{{/each}}
@@ -133,9 +133,9 @@
 
 															<a href="#">{{quien}}</a>
 															<br>
-															<!--{{#emoji}} -->
+															
 																<a style="color: {{color}}; display: inline-block;">{{this.mensaje}}</a>
-															<!-- {{/emoji}} -->
+															
 
 															{{#each fotos}}
 

@@ -116,7 +116,7 @@
 
 .search {
 	position: relative;
-	top: -11px;
+	top: -17px;
 	display: inline-block;
 	padding-top: 19px;
 	color: white;
@@ -838,7 +838,16 @@ input.message:-moz-placeholder { /* Firefox 18- */
   	margin-left: 52px
 }
 
+.titulo__home {
+	font-size: 22px; 
+	width: 60%; 
+}
 
+.p_1 {
+	position: relative; 
+	left: 0px; 
+	top: -75px;
+}
 
 @media (max-width: 500px) {
   #top__full {
@@ -851,11 +860,13 @@ input.message:-moz-placeholder { /* Firefox 18- */
 
   .resize {
   	display: block;
-  	margin-left: 65px;
+  	margin-left: 3px;
+  	position: relative;
+    left: -141px;
   }
 
   #left__in {
-  	margin-left: 85px
+  	margin-left: 110px
   }
 
   .muro button, .muro btn, .muro btn-default, .muro label {
@@ -871,5 +882,41 @@ input.message:-moz-placeholder { /* Firefox 18- */
     width: 100%;
     margin-top: 11px
   }
+
+  .lista.lista__responsive {
+  	height: 140px;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    width: 350px;
+    white-space: nowrap;
+    margin: 10px auto;
+  }
+
+  .user-card.user__card__responsive {
+  	width: 133px;
+    display: inline-block;
+    min-height: 50px;
+    padding: 10px 25px;
+    margin: 0;
+  }
+
+  	.titulo__home {
+	    font-size: 18px;
+    	width: 46%;
+	}
+
+	.p_1 {
+		top: -55px
+	}
+
+	.cop {
+		display: inline-block;
+    	position: relative;
+    	top: 19px;
+	}
+
+	.nav > li > a {
+		padding: 8px 10px;
+	}
 }
 
