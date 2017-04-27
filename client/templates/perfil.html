@@ -101,9 +101,10 @@
 					{{#each amigos}}
 					<div class="cuadro-amigo">
 						{{#each avatar2}}
-						<a href="/m/{{this.metadata.userId}}"><img src="{{url}}" style="height: 95px;"></a>
+
+						<a href="/m/{{this.metadata.userId}}"><img src="{{url}}" class="foto_amigo"></a>
 						{{/each}}
-						<h5 style="margin-bottom: 5px; margin-top: 0px">{{this.amigo}} </h5>
+						<h5 style="margin-bottom: 5px; margin-top: 0px; margin-left: 8px;">{{this.amigo}} </h5>
 					</div>
 					{{/each}}
 					<h5 class="ver" style="color: #b10c2a; font-size: 12px">Ver más amigos</h5>
@@ -134,11 +135,13 @@
 						<span class="eliminar-pub2" style="position: relative;
     top: 50px;
     left: 90%;
-    color: #95a5a6;"><i class="fa fa-times" aria-hidden="true"></i></span>
+    color: #95a5a6;"><i class="fa fa-times" style="position: relative;
+    top: -10px;
+    left: 14px;" aria-hidden="true"></i></span>
 		{{/if}}
 						<div class="publicacion" style="margin-bottom: 20px">
 							<a>{{creador}}</a>
-							<img src="{{this.url}}" alt="{{this.metadata.creadorId}}" style="min-width: 200px; min-height: 200px; max-width: 400px; max-height: 350px; box-shadow: inset 0px -1px 11px -2px rgba(0,0,0,0.75); border-radius: 4.5px; border: 1px solid #f1f1f1; display: block; ">
+							<img src="{{this.url}}" alt="{{this.metadata.creadorId}}" style="width: 90%; display: block; min-height: 200px; margin: 5px auto; max-height: 350px; box-shadow: inset 0px -1px 11px -2px rgba(0,0,0,0.75); border-radius: 4.5px; border: 1px solid #f1f1f1; display: block; ">
 							<br>
 							<span class="glyphicon glyphicon-heart like" style="color: #bdc3c7;" aria-hidden="true"></span>
 							{{likes}}
@@ -164,11 +167,13 @@
 						<span class="eliminar-pub" style="position: relative;
     top: 49px;
     left: 90%;
-    color: #95a5a6;"><i class="fa fa-times" aria-hidden="true"></i></span>
+    color: #95a5a6;"><i class="fa fa-times" style="position: relative;
+    top: -10px;
+    left: 14px;" aria-hidden="true"></i></span>
 		{{/if}}
 					<div class="publicacion" style="margin-bottom: 20px">
 						<a>{{this.de.nombre}}</a>
-          	<iframe width="560" height="349" src={{ytb}} frameborder="0" allowfullscreen >
+          	<iframe style="width: 90%; display: block; min-height: 200px; margin: 5px auto;" src={{ytb}} frameborder="0" allowfullscreen >
           	</iframe>
 						<span class="glyphicon glyphicon-heart like" style="color: #bdc3c7;" aria-hidden="true"></span>
 						{{likes}}
@@ -191,7 +196,9 @@
 						{{#if es}}
 						<div class="publicacion" style="margin-top: 20px;">
 							{{#if esMiMuro}}
-							<span class="eliminar-pub" style="position: relative; top: 41px; left: 90%; color: #95a5a6;"><i class="fa fa-times" aria-hidden="true"></i></span>
+							<span class="eliminar-pub" style="position: relative; top: 41px; left: 90%; color: #95a5a6;"><i class="fa fa-times" style="position: relative;
+    top: -10px;
+    left: 14px;" aria-hidden="true"></i></span>
 							{{/if}}
 							<a>{{this.de.nombre}}</a>
 							<p>{{this.texto}}</p>
@@ -243,11 +250,15 @@
                     {{#each amigos}}
 					<div class="cuadro-amigo">
 						{{#each avatar2}}
-						<img src="{{url}}" alt="" style="width: 120px; height: 150px;  margin-top: 15px;">
+						<img src="{{url}}" alt="" style="width: 80px; height: 110px;  margin: 15px 5px;">
 						{{/each}}
-						<h5 style="top: -48px">{{this.amigo}} </h5>
+						<h5 style="top: -64px; left: 3px;">{{this.amigo}} </h5>
 					</div>
 					{{/each}}
+                </div>
+				
+				<div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
                 </div>
 
 

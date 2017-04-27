@@ -96,14 +96,19 @@ Meteor.methods({
 		check(datos, Object);
 
 		if (this.userId) {
-			var id = Solicitudes.insert({
-				createdAt: new Date(),
-				de: this.userId,
-				para: datos.para,
-				aceptado: false,
-				quien: datos.username
-			});
-			console.log(id);
+			if (Solicitudes.find({de: this.userId, para: datos.para}).fetch().length > 0 ) {
+				console.log('Ya existe solicitud')	
+			} else {
+				var id = Solicitudes.insert({
+					createdAt: new Date(),
+					de: this.userId,
+					para: datos.para,
+					aceptado: false,
+					quien: datos.username
+				})
+			}
+			
+			
 		} else {
 			return;
 		}

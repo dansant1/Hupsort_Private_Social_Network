@@ -25,10 +25,12 @@ Template.registro.events({
             console.log('Bienvenido');
 
             Meteor.loginWithPassword(datos.email, datos.password, function (err) {
-                    if (err) return console.log('Error en el usuario o contraseña, intentelo nuevamente','danger');
-                    Modal.hide('registro');
-                    FlowRouter.go('/editar');
-                });
+                  
+                  if (err) return console.log('Error en el usuario o contraseña, intentelo nuevamente','danger');
+                  swal("Te hemos enviado un email de verificación")        
+                  Modal.hide('registro');
+                    
+            });
 
 
           }

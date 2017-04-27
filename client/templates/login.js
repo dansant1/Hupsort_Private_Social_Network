@@ -11,8 +11,14 @@ Template.login.events({
 		
 			Meteor.loginWithPassword(user, password, function (err) {
             	if (err) return console.log('Error en el usuario o contraseña, intentelo nuevamente','danger');
-            	Modal.hide('login');
-            	FlowRouter.go('/chat');
+            	Modal.hide('login')
+
+            	if (Meteor.user().emails[0].verified) {
+            		FlowRouter.go('/chat');	
+            	} else {
+            		swal("Te hemos enviado un email de verificación")   
+            	}
+            	
       		});
 		
 

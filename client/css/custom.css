@@ -122,6 +122,7 @@
 	color: white;
 }
 .search input {
+  margin-top: 6px;
 	text-indent: 30px;
 	display: inline-block;
 	width: 250px;
@@ -368,9 +369,7 @@ a:hover {
   text-align: center;
 }
 
-.user-card:hover {
-	background-color: #bbb6c7;
-}
+
 
 .contenido-pantalla h1 {
 	margin-bottom: 30px;
@@ -849,9 +848,21 @@ input.message:-moz-placeholder { /* Firefox 18- */
 	top: -75px;
 }
 
+#leg {
+    position: relative; top: 0px; left: 28px;
+}
+
+.foto_amigo {
+  height: 95px;
+}
+
 @media (max-width: 500px) {
   #top__full {
     margin-top: 90px;
+  }
+
+  .foto_amigo {
+    height: 110px !important;
   }
 
   .pantalla-inicio {
@@ -862,11 +873,15 @@ input.message:-moz-placeholder { /* Firefox 18- */
   	display: block;
   	margin-left: 3px;
   	position: relative;
-    left: -141px;
+    left: 40px;
   }
 
   #left__in {
-  	margin-left: 110px
+  	margin-left: 80px
+  }
+
+  #leg {
+    position: relative; top: 0px; left: 70px;
   }
 
   .muro button, .muro btn, .muro btn-default, .muro label {
@@ -900,6 +915,13 @@ input.message:-moz-placeholder { /* Firefox 18- */
     margin: 0;
   }
 
+  .footer a {
+  color: #B24357;
+  display: block;
+  margin: 5px auto;
+  text-align: center;
+  }
+
   	.titulo__home {
 	    font-size: 18px;
     	width: 46%;
@@ -910,13 +932,24 @@ input.message:-moz-placeholder { /* Firefox 18- */
 	}
 
 	.cop {
-		display: inline-block;
-    	position: relative;
-    	top: 19px;
+		display: block;
+    position: relative;
+    top: 59px;
+    width: 80%;
+    margin: 0px auto;
+    text-align: center;
 	}
 
 	.nav > li > a {
 		padding: 8px 10px;
 	}
+  
+  .mensaje p {
+    width: 65%
+  }
+  
+  .colorpicker.colorpicker-visible {
+    top: 720px !important;
+  }
 }
 
