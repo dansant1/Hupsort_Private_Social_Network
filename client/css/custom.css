@@ -262,7 +262,7 @@ span.emoji {
 	border-radius: 4px;
 	margin-bottom: 10px;
 	display: inline-block;
-	padding: 15px 25px;
+	padding: 15px 10px;
 	min-height: 60px;
 	background-color: white;
 	box-shadow: 0 1px 1px rgba(0,0,0,.05);
@@ -856,7 +856,29 @@ input.message:-moz-placeholder { /* Firefox 18- */
   height: 95px;
 }
 
+.mod_mensajes {
+  width: 63%; float: left; padding-top: 13px; margin-left: 48px;
+}
+
+#mod_upload {
+  margin-top: 0; padding-top: 14px; background-color: #b10c2a; border-color: #b10c2a; height: 100%; width: 82px; color: white; margin-right: -308px;
+}
+
 @media (max-width: 500px) {
+  .mod_mensajes {
+    width: 67%;
+    margin-left: 10px;
+    
+  }
+
+  .mensaje-box > input {
+    width: 67%;
+  }
+
+  #mod_upload {
+    margin-right: -2px;
+  }
+  
   #top__full {
     margin-top: 90px;
   }
@@ -884,6 +906,10 @@ input.message:-moz-placeholder { /* Firefox 18- */
     position: relative; top: 0px; left: 70px;
   }
 
+  #mod {
+    margin-top: -8px
+  }
+
   .muro button, .muro btn, .muro btn-default, .muro label {
   	width: 36%
   }
@@ -896,6 +922,10 @@ input.message:-moz-placeholder { /* Firefox 18- */
   	display: block;
     width: 100%;
     margin-top: 11px
+  }
+  
+  .conversaciones {
+    overflow-y: hidden; overflow-x: scroll;  white-space:nowrap
   }
 
   .lista.lista__responsive {
@@ -922,10 +952,16 @@ input.message:-moz-placeholder { /* Firefox 18- */
   text-align: center;
   }
 
-  	.titulo__home {
+  .titulo__home {
 	    font-size: 18px;
     	width: 46%;
 	}
+  
+  .mensaje {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
 	.p_1 {
 		top: -55px

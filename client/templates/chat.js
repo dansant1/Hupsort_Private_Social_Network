@@ -214,6 +214,15 @@ Template.mensajes.helpers({
 	mensajes: function () {
 		return Mensajes.find({});
 	},
+  placeholder() {
+    let texto = 'Envia un Mensaje. Para mencionar a un usuario utiliza el @.'
+
+    if (window.innerWidth <= 500) {
+      return 'Envia un Mensaje.'
+    } else {
+      return texto
+    }
+  },
   avatar2() {
     return Avatares.find({'metadata.userId': this.de.id})
   },
