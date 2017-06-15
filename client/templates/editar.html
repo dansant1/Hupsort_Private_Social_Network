@@ -8,10 +8,17 @@
         <h2>Complete sus Datos</h2>
         <form>
 
-          <div class="form-group">
-            <label for="edad">Edad:</label>
-            <input type="number" name="edad" class="form-control" id="edad">
+        <div class="form-group">
+            <label for="edad">Fecha de Nacimiento:</label>
+            <div class="input-group" id="datetimepicker">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+              <input class="set-due-date form-control"  name="edad" id="edad" type="text"/>
+            </div>
+           <!-- <input type="number" name="edad" class="form-control" id="edad">-->
           </div>
+          
+            
+          
           <div class="form-group">
             <label for="genero">Género:</label>
             <select id="genero" class="form-control">
@@ -62,7 +69,11 @@
 
 <template name="avatar">
     <div>
+      {{#if isMobile}}
+        <h1 style="color: #B24357; width: 90%; text-align:center; margin: 10px auto; font-size: 30px;">"Para editar tu avatar de manera más dinámica, por favor, descárgate la aplicación Hupsort desde tu celular"</h1>
+      {{else}}
 
+      
     <div>
      
 
@@ -73,7 +84,7 @@
           <div class="row">
             <div class="col-md-4">
 
-                <canvas id="avatar" style="margin-left: -45px"></canvas>
+                <canvas id="avatar"></canvas>
                 <br>
                 <br>
 
@@ -303,12 +314,13 @@
 
                   <div id="menu2" class="tab-pane fade">
                     <ul class="nav nav-tabs">
-                        <li><a data-toggle="tab" href="#coloro0">
-                          <span style="display: inline-block; background-color: #A36B18; width: 40px; height: 40px; border-radius: 70%;margin-right: 15px; margin-left: 15px;"></span>
-                        </a></li>
                         <li><a data-toggle="tab" href="#coloro3">
-                           <span style="display: inline-block; background-color: #844213; width: 40px; height: 40px; border-radius: 70%;margin-right: 15px;"></span>
+                           <span style="display: inline-block; background-color: #A36B18; width: 40px; height: 40px; border-radius: 70%;margin-right: 15px;"></span>
                         </a></li>
+                        <li><a data-toggle="tab" href="#coloro0">
+                          <span style="display: inline-block; background-color:#844213 ; width: 40px; height: 40px; border-radius: 70%;margin-right: 15px; margin-left: 15px;"></span>
+                        </a></li>
+                        
                         <li><a data-toggle="tab" href="#coloro2">
                            <span style="display: inline-block; background-color: #482614; width: 40px; height: 40px; border-radius: 70%;margin-right: 15px;"></span>
                         </a></li>
@@ -773,5 +785,6 @@
       </div>
 
     </div>
+    {{/if}}
   </div>
 </template>

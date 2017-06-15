@@ -459,7 +459,7 @@ a:hover {
 
 .muro button, .muro btn, .muro btn-default, .muro label {
 	display: inline-block;
-	width: 10%;
+	width: 19%;
 	height: 45px;
 	border: 2px solid #BBB6C7;
 	background-color: #BBB6C7;
@@ -823,14 +823,15 @@ input.message:-moz-placeholder { /* Firefox 18- */
   display: inline-block;
   margin: -10px auto;
   border-radius: 3px;
-  width: 99%;
-  height: 85px;
+  width: 84px;
+  height: 94px;
 }
 
 .cuadro-amigo h5 {
   position: relative;
-  top: -38px;
-  color: white
+  top: 3px;
+  left: 16px;
+  color: black
 }
 
 #left__in {

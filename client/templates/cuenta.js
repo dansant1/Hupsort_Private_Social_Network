@@ -117,6 +117,12 @@ Template.cuenta.onCreated(function () {
     });
 });
 
+Template.cuenta.events({
+  'click #not'() {
+     $('html, body').animate({ scrollTop: $('#' + this.pubId).offset().top }, 'slow');
+            return false;
+  }
+})
 
 Template.cuenta.helpers({
   notificaciones() {

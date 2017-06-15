@@ -72,12 +72,14 @@ Meteor.methods({
 
       } else {
         Likes.insert(datos);
+        console.log(post)
         Notificaciones.insert({
           createdAt: new Date(),
           de: {
             nombre: Meteor.users.findOne({_id: this.userId}).username,
             id: this.userId
           },
+          pubId: post,
           para: Muro.findOne({_id: post}).de.id,
           descripcion: Meteor.users.findOne({_id: this.userId}).username + ' le gusto una publicacion tuya.'
         })

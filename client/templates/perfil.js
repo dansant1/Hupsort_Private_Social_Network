@@ -180,6 +180,19 @@ Template.perfil.onCreated(function () {
   Session.set('amigosde', '');
 });
 
+Template.perfil.helpers({
+  edad() {
+    let fecha = this.profile.edad
+    let numero = fecha.slice(6, 10)
+    console.log(numero)
+    numero = parseInt(numero)
+    let anio = new Date().getFullYear();
+    console.log(numero)
+    console.log(anio)
+    return anio - numero
+  }
+})
+
 Template.perfil.onRendered(function () {
    //$('[data-toggle="tooltip"]').tooltip();
 });

@@ -40,3 +40,5 @@ audit-argument-checks
 check
 meteorhacks:ssr
 edgee:slingshot
+mystor:device-detection
+tsega:bootstrap3-datetimepicker

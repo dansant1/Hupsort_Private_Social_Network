@@ -61,7 +61,7 @@
       <tr>
         <td>Edad</td>
 				{{#if this.profile.edad}}
-        <td>{{this.profile.edad}}</td>
+        <td>{{edad}}</td>
 
 				{{else}}
 				<td>-</td>
@@ -104,7 +104,7 @@
 
 						<a href="/m/{{this.metadata.userId}}"><img src="{{url}}" class="foto_amigo"></a>
 						{{/each}}
-						<h5 style="margin-bottom: 5px; margin-top: 0px; margin-left: 8px;">{{this.amigo}} </h5>
+						<h5 style="margin-bottom: 5px; margin-top: 0px; margin-left: 0px; left: 3px;">{{this.amigo}} </h5>
 					</div>
 					{{/each}}
 					<h5 class="ver" style="color: #b10c2a; font-size: 12px">Ver más amigos</h5>
@@ -130,7 +130,7 @@
 					{{#each publicaciones}}
 					{{#each fotos}}
 					{{#if isImage}}
-					<div class="col-md-12" style="padding: 0;">
+					<div class="col-md-12" style="padding: 0;" id="{{this._id}}">
 						{{#if esMiMuro}}
 						<span class="eliminar-pub2" style="position: relative;
     top: 50px;
@@ -141,7 +141,7 @@
 		{{/if}}
 						<div class="publicacion" style="margin-bottom: 20px">
 							<a>{{creador}}</a>
-							<img src="{{this.url}}" alt="{{this.metadata.creadorId}}" style="width: 90%; display: block; min-height: 200px; margin: 5px auto; max-height: 350px; box-shadow: inset 0px -1px 11px -2px rgba(0,0,0,0.75); border-radius: 4.5px; border: 1px solid #f1f1f1; display: block; ">
+							<img src="{{this.url}}" alt="{{this.metadata.creadorId}}" style="max-width: 500px; display: block; max-height: 350px; box-shadow: inset 0px -1px 11px -2px rgba(0,0,0,0.75); border-radius: 4.5px; border: 1px solid #f1f1f1; display: block; ">
 							<br>
 							<span class="glyphicon glyphicon-heart like" style="color: #bdc3c7;" aria-hidden="true"></span>
 							{{likes}}
@@ -162,7 +162,7 @@
 
 					{{/each}}
 					{{#if this.esYoutube}}
-					<div class="col-md-12" style="padding: 0;">
+					<div class="col-md-12" style="padding: 0;" id="{{this._id}}">
 						{{#if esMiMuro}}
 						<span class="eliminar-pub" style="position: relative;
     top: 49px;
@@ -173,7 +173,7 @@
 		{{/if}}
 					<div class="publicacion" style="margin-bottom: 20px">
 						<a>{{this.de.nombre}}</a>
-          	<iframe style="width: 90%; display: block; min-height: 200px; margin: 5px auto;" src={{ytb}} frameborder="0" allowfullscreen >
+          	<iframe style="width: 64.9%; display: block; min-height: 220px;" src={{ytb}} frameborder="0" allowfullscreen >
           	</iframe>
 						<span class="glyphicon glyphicon-heart like" style="color: #bdc3c7;" aria-hidden="true"></span>
 						{{likes}}
@@ -192,7 +192,7 @@
 					</div>
 					{{else}}
 
-					<div class="col-md-12" style="padding: 0;">
+					<div class="col-md-12" style="padding: 0;" id="{{this._id}}">
 						{{#if es}}
 						<div class="publicacion" style="margin-top: 20px;">
 							{{#if esMiMuro}}
@@ -250,9 +250,9 @@
                     {{#each amigos}}
 					<div class="cuadro-amigo">
 						{{#each avatar2}}
-						<img src="{{url}}" alt="" style="width: 80px; height: 110px;  margin: 15px 5px;">
+						<img src="{{url}}" alt="" style="width: 90px; height: 110px; margin: 15px 5px;">
 						{{/each}}
-						<h5 style="top: -64px; left: 3px;">{{this.amigo}} </h5>
+						<h5 style="top: -42px; left: 8px;">{{this.amigo}} </h5>
 					</div>
 					{{/each}}
                 </div>

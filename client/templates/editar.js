@@ -1,4 +1,25 @@
+
+function detectmob() { 
+ if( navigator.userAgent.match(/Android/i)
+ || navigator.userAgent.match(/webOS/i)
+ || navigator.userAgent.match(/iPhone/i)
+ || navigator.userAgent.match(/iPad/i)
+ || navigator.userAgent.match(/iPod/i)
+ || navigator.userAgent.match(/BlackBerry/i)
+ || navigator.userAgent.match(/Windows Phone/i)
+ ){
+    return true;
+  }
+ else {
+    return false;
+  }
+}
+
 Template.editar.events({
+  'click #datetimepicker'() {
+    
+    $('#datetimepicker').datetimepicker({format: 'DD/MM/YYYY'});
+  },
   'submit form': function (event, template) {
 		event.preventDefault();
 
@@ -99,6 +120,16 @@ Template.avatar.onCreated(function () {
 	self.autorun(function () {
         self.subscribe('avatares');
 	});
+})
+
+Template.avatar.helpers({
+  isMobile() {
+    if( detectmob() ) {
+      return true
+    } else {
+      return false
+    }
+  }
 })
 
 Template.avatar.onRendered( () => {
